@@ -1,0 +1,12 @@
+language: swift
+osx_image: xcode10
+xcode_project: ReddiX.xcodeproj
+xcode_scheme:
+  - ReddiX
+  - RAPI
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone X
+before_install:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+before_script:
+  - carthage bootstrap

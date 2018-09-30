@@ -238,8 +238,8 @@
 				B717264E21611E9600585459 /* OHHTTPStubs.framework */,
 			);
 			name = Carthage;
-			path = /Users/jjgp/Workspace/ReddiX/Carthage/Build/iOS;
-			sourceTree = "<absolute>";
+			path = Carthage/Build/iOS;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
