@@ -11,7 +11,11 @@ import OHHTTPStubs
 @testable import RAPI
 
 class RAPITests: XCTestCase {
-
+    
+    let rapi = RAPI()
+    let request = Request<Children>(parameters: ["count": "25"],
+                                    URLPath: "/.json")
+    
     override func tearDown() {
         OHHTTPStubs.removeAllStubs()
         super.tearDown()
@@ -19,10 +23,7 @@ class RAPITests: XCTestCase {
 
     func testProcessChildren() {
         stubRedditResponse()
-        
-        let rapi = RAPI()
-        let request = Request<Children>()
-        
+
         let expect = expectation(description: "process fulfills")
         rapi.process(request) { children, response, error in
             XCTAssert(children?.after == "t3_9k656x")
@@ -37,9 +38,6 @@ class RAPITests: XCTestCase {
     func testProcessHTTPFailure() {
         stubRedditResponse(status: 500)
         
-        let rapi = RAPI()
-        let request = Request<Children>()
-        
         let expect = expectation(description: "process fulfills")
         rapi.process(request) { children, response, error in
             XCTAssertNil(children)
@@ -52,9 +50,6 @@ class RAPITests: XCTestCase {
     
     func testProcessMapFailure() {
         stubRedditResponse(fixture: nil)
-        
-        let rapi = RAPI()
-        let request = Request<Children>()
         
         let expect = expectation(description: "process fulfills")
         rapi.process(request) { children, response, error in

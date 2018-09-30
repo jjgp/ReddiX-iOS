@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B71725E02160105000585459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71725DF2160105000585459 /* AppDelegate.swift */; };
-		B71725E22160105000585459 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71725E12160105000585459 /* ViewController.swift */; };
+		B71725E22160105000585459 /* ChildrenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71725E12160105000585459 /* ChildrenViewController.swift */; };
 		B71725E52160105000585459 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71725E32160105000585459 /* Main.storyboard */; };
 		B71725E72160105100585459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71725E62160105100585459 /* Assets.xcassets */; };
 		B71725EA2160105100585459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71725E82160105100585459 /* LaunchScreen.storyboard */; };
@@ -26,6 +26,22 @@
 		B717263D21611C3600585459 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71726362161122F00585459 /* OHHTTPStubs.framework */; };
 		B717264F21611E9600585459 /* OHHTTPStubs.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B717264E21611E9600585459 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B71726512161241800585459 /* Posting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726502161241800585459 /* Posting.swift */; };
+		B732BE6B216169930020CD7F /* UNI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE62216169930020CD7F /* UNI.framework */; };
+		B732BE72216169930020CD7F /* UNITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732BE71216169930020CD7F /* UNITests.swift */; };
+		B732BE74216169930020CD7F /* UNI.h in Headers */ = {isa = PBXBuildFile; fileRef = B732BE64216169930020CD7F /* UNI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B732BE77216169930020CD7F /* UNI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE62216169930020CD7F /* UNI.framework */; };
+		B732BE78216169930020CD7F /* UNI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE62216169930020CD7F /* UNI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B732BE8121616B550020CD7F /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE8021616B550020CD7F /* ReSwift.framework */; };
+		B732BE8621616BBB0020CD7F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732BE8521616BBB0020CD7F /* AppState.swift */; };
+		B732BE8821616CCC0020CD7F /* ChildrenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732BE8721616CCC0020CD7F /* ChildrenState.swift */; };
+		B732BE8921616D4A0020CD7F /* RAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71726132160FBE700585459 /* RAPI.framework */; };
+		B732BE8B21616E0E0020CD7F /* ChildrenReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732BE8A21616E0E0020CD7F /* ChildrenReducer.swift */; };
+		B732BE8D21616E820020CD7F /* ChildrenActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732BE8C21616E820020CD7F /* ChildrenActions.swift */; };
+		B732BE90216170980020CD7F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732BE8F216170980020CD7F /* Store.swift */; };
+		B732BE92216171B60020CD7F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732BE91216171B60020CD7F /* AppReducer.swift */; };
+		B7FD1D23216182430066BCB2 /* AsyncMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD1D22216182430066BCB2 /* AsyncMiddleware.swift */; };
+		B7FD1D282161C1DA0066BCB2 /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */; };
+		B7FD1D292161C3B20066BCB2 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE8021616B550020CD7F /* ReSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +73,27 @@
 			remoteGlobalIDString = B71726122160FBE700585459;
 			remoteInfo = RAPI;
 		};
+		B732BE6C216169930020CD7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B71725D42160105000585459 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B732BE61216169930020CD7F;
+			remoteInfo = UNI;
+		};
+		B732BE6E216169930020CD7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B71725D42160105000585459 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B71725DB2160105000585459;
+			remoteInfo = ReddiX;
+		};
+		B732BE75216169930020CD7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B71725D42160105000585459 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B732BE61216169930020CD7F;
+			remoteInfo = UNI;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +104,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B71726292160FBE800585459 /* RAPI.framework in Embed Frameworks */,
+				B732BE78216169930020CD7F /* UNI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,7 +125,7 @@
 /* Begin PBXFileReference section */
 		B71725DC2160105000585459 /* ReddiX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReddiX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71725DF2160105000585459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B71725E12160105000585459 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B71725E12160105000585459 /* ChildrenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenViewController.swift; sourceTree = "<group>"; };
 		B71725E42160105000585459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B71725E62160105100585459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B71725E92160105100585459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,6 +147,21 @@
 		B717263A2161139200585459 /* Children.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Children.swift; sourceTree = "<group>"; };
 		B717264E21611E9600585459 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OHHTTPStubs.framework; sourceTree = "<group>"; };
 		B71726502161241800585459 /* Posting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posting.swift; sourceTree = "<group>"; };
+		B732BE62216169930020CD7F /* UNI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UNI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B732BE64216169930020CD7F /* UNI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNI.h; sourceTree = "<group>"; };
+		B732BE65216169930020CD7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B732BE6A216169930020CD7F /* UNITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UNITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B732BE71216169930020CD7F /* UNITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNITests.swift; sourceTree = "<group>"; };
+		B732BE73216169930020CD7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B732BE8021616B550020CD7F /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
+		B732BE8521616BBB0020CD7F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		B732BE8721616CCC0020CD7F /* ChildrenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenState.swift; sourceTree = "<group>"; };
+		B732BE8A21616E0E0020CD7F /* ChildrenReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenReducer.swift; sourceTree = "<group>"; };
+		B732BE8C21616E820020CD7F /* ChildrenActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenActions.swift; sourceTree = "<group>"; };
+		B732BE8F216170980020CD7F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		B732BE91216171B60020CD7F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		B7FD1D22216182430066BCB2 /* AsyncMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncMiddleware.swift; sourceTree = "<group>"; };
+		B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingMiddleware.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +170,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71726282160FBE800585459 /* RAPI.framework in Frameworks */,
+				B7FD1D292161C3B20066BCB2 /* ReSwift.framework in Frameworks */,
+				B732BE77216169930020CD7F /* UNI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,16 +198,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B732BE5F216169930020CD7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B732BE8921616D4A0020CD7F /* RAPI.framework in Frameworks */,
+				B732BE8121616B550020CD7F /* ReSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B732BE67216169930020CD7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B732BE6B216169930020CD7F /* UNI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		B71725D32160105000585459 = {
 			isa = PBXGroup;
 			children = (
-				B71725DE2160105000585459 /* Source */,
-				B71725F32160105200585459 /* Tests */,
+				B71725DE2160105000585459 /* ReddiX */,
+				B71725F32160105200585459 /* ReddiXTests */,
 				B71726142160FBE700585459 /* RAPI */,
 				B71726212160FBE800585459 /* RAPITests */,
+				B732BE63216169930020CD7F /* UNI */,
+				B732BE70216169930020CD7F /* UNITests */,
 				B71725DD2160105000585459 /* Products */,
 				B71726352161122E00585459 /* Frameworks */,
 				B717264D21611E1E00585459 /* Carthage */,
@@ -166,30 +240,32 @@
 				B71725F02160105200585459 /* ReddiXTests.xctest */,
 				B71726132160FBE700585459 /* RAPI.framework */,
 				B717261B2160FBE800585459 /* RAPITests.xctest */,
+				B732BE62216169930020CD7F /* UNI.framework */,
+				B732BE6A216169930020CD7F /* UNITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B71725DE2160105000585459 /* Source */ = {
+		B71725DE2160105000585459 /* ReddiX */ = {
 			isa = PBXGroup;
 			children = (
 				B71725DF2160105000585459 /* AppDelegate.swift */,
-				B71725E12160105000585459 /* ViewController.swift */,
+				B71725E12160105000585459 /* ChildrenViewController.swift */,
 				B71725E32160105000585459 /* Main.storyboard */,
 				B71725E62160105100585459 /* Assets.xcassets */,
 				B71725E82160105100585459 /* LaunchScreen.storyboard */,
 				B71725EB2160105100585459 /* Info.plist */,
 			);
-			path = Source;
+			path = ReddiX;
 			sourceTree = "<group>";
 		};
-		B71725F32160105200585459 /* Tests */ = {
+		B71725F32160105200585459 /* ReddiXTests */ = {
 			isa = PBXGroup;
 			children = (
 				B71725F42160105200585459 /* ReddiXTests.swift */,
 				B71725F62160105200585459 /* Info.plist */,
 			);
-			path = Tests;
+			path = ReddiXTests;
 			sourceTree = "<group>";
 		};
 		B71726062160159800585459 /* JSON */ = {
@@ -227,6 +303,7 @@
 		B71726352161122E00585459 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B732BE8021616B550020CD7F /* ReSwift.framework */,
 				B71726362161122F00585459 /* OHHTTPStubs.framework */,
 			);
 			name = Frameworks;
@@ -241,6 +318,64 @@
 			path = Carthage/Build/iOS;
 			sourceTree = SOURCE_ROOT;
 		};
+		B732BE63216169930020CD7F /* UNI */ = {
+			isa = PBXGroup;
+			children = (
+				B732BE8221616B9D0020CD7F /* Actions */,
+				B732BE65216169930020CD7F /* Info.plist */,
+				B732BE8E21616E860020CD7F /* Middleware */,
+				B732BE8321616BA30020CD7F /* Reducers */,
+				B732BE8421616BAE0020CD7F /* State */,
+				B732BE8F216170980020CD7F /* Store.swift */,
+				B732BE64216169930020CD7F /* UNI.h */,
+			);
+			path = UNI;
+			sourceTree = "<group>";
+		};
+		B732BE70216169930020CD7F /* UNITests */ = {
+			isa = PBXGroup;
+			children = (
+				B732BE71216169930020CD7F /* UNITests.swift */,
+				B732BE73216169930020CD7F /* Info.plist */,
+			);
+			path = UNITests;
+			sourceTree = "<group>";
+		};
+		B732BE8221616B9D0020CD7F /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				B732BE8C21616E820020CD7F /* ChildrenActions.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		B732BE8321616BA30020CD7F /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				B732BE91216171B60020CD7F /* AppReducer.swift */,
+				B732BE8A21616E0E0020CD7F /* ChildrenReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		B732BE8421616BAE0020CD7F /* State */ = {
+			isa = PBXGroup;
+			children = (
+				B732BE8521616BBB0020CD7F /* AppState.swift */,
+				B732BE8721616CCC0020CD7F /* ChildrenState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		B732BE8E21616E860020CD7F /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				B7FD1D22216182430066BCB2 /* AsyncMiddleware.swift */,
+				B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */,
+			);
+			path = Middleware;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -249,6 +384,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71726252160FBE800585459 /* RAPI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B732BE5D216169930020CD7F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B732BE74216169930020CD7F /* UNI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,11 +406,13 @@
 				B71725D92160105000585459 /* Frameworks */,
 				B71725DA2160105000585459 /* Resources */,
 				B717262D2160FBE800585459 /* Embed Frameworks */,
+				B7FD1D2A2161C3BD0066BCB2 /* Carthage */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				B71726272160FBE800585459 /* PBXTargetDependency */,
+				B732BE76216169930020CD7F /* PBXTargetDependency */,
 			);
 			name = ReddiX;
 			productName = ReddiX;
@@ -330,6 +475,44 @@
 			productReference = B717261B2160FBE800585459 /* RAPITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B732BE61216169930020CD7F /* UNI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B732BE79216169930020CD7F /* Build configuration list for PBXNativeTarget "UNI" */;
+			buildPhases = (
+				B732BE5D216169930020CD7F /* Headers */,
+				B732BE5E216169930020CD7F /* Sources */,
+				B732BE5F216169930020CD7F /* Frameworks */,
+				B732BE60216169930020CD7F /* Resources */,
+				B732BE7F21616AD90020CD7F /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UNI;
+			productName = UNI;
+			productReference = B732BE62216169930020CD7F /* UNI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B732BE69216169930020CD7F /* UNITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B732BE7C216169930020CD7F /* Build configuration list for PBXNativeTarget "UNITests" */;
+			buildPhases = (
+				B732BE66216169930020CD7F /* Sources */,
+				B732BE67216169930020CD7F /* Frameworks */,
+				B732BE68216169930020CD7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B732BE6D216169930020CD7F /* PBXTargetDependency */,
+				B732BE6F216169930020CD7F /* PBXTargetDependency */,
+			);
+			name = UNITests;
+			productName = UNITests;
+			productReference = B732BE6A216169930020CD7F /* UNITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -354,6 +537,14 @@
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = B71725DB2160105000585459;
 					};
+					B732BE61216169930020CD7F = {
+						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
+					};
+					B732BE69216169930020CD7F = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = B71725DB2160105000585459;
+					};
 				};
 			};
 			buildConfigurationList = B71725D72160105000585459 /* Build configuration list for PBXProject "ReddiX" */;
@@ -373,6 +564,8 @@
 				B71725EF2160105200585459 /* ReddiXTests */,
 				B71726122160FBE700585459 /* RAPI */,
 				B717261A2160FBE800585459 /* RAPITests */,
+				B732BE61216169930020CD7F /* UNI */,
+				B732BE69216169930020CD7F /* UNITests */,
 			);
 		};
 /* End PBXProject section */
@@ -410,14 +603,71 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B732BE60216169930020CD7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B732BE68216169930020CD7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B732BE7F21616AD90020CD7F /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		B7FD1D2A2161C3BD0066BCB2 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B71725D82160105000585459 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B71725E22160105000585459 /* ViewController.swift in Sources */,
+				B71725E22160105000585459 /* ChildrenViewController.swift in Sources */,
 				B71725E02160105000585459 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +700,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B732BE5E216169930020CD7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B732BE92216171B60020CD7F /* AppReducer.swift in Sources */,
+				B732BE90216170980020CD7F /* Store.swift in Sources */,
+				B732BE8821616CCC0020CD7F /* ChildrenState.swift in Sources */,
+				B732BE8B21616E0E0020CD7F /* ChildrenReducer.swift in Sources */,
+				B7FD1D23216182430066BCB2 /* AsyncMiddleware.swift in Sources */,
+				B732BE8D21616E820020CD7F /* ChildrenActions.swift in Sources */,
+				B732BE8621616BBB0020CD7F /* AppState.swift in Sources */,
+				B7FD1D282161C1DA0066BCB2 /* LoggingMiddleware.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B732BE66216169930020CD7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B732BE72216169930020CD7F /* UNITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -472,6 +745,21 @@
 			isa = PBXTargetDependency;
 			target = B71726122160FBE700585459 /* RAPI */;
 			targetProxy = B71726262160FBE800585459 /* PBXContainerItemProxy */;
+		};
+		B732BE6D216169930020CD7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B732BE61216169930020CD7F /* UNI */;
+			targetProxy = B732BE6C216169930020CD7F /* PBXContainerItemProxy */;
+		};
+		B732BE6F216169930020CD7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B71725DB2160105000585459 /* ReddiX */;
+			targetProxy = B732BE6E216169930020CD7F /* PBXContainerItemProxy */;
+		};
+		B732BE76216169930020CD7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B732BE61216169930020CD7F /* UNI */;
+			targetProxy = B732BE75216169930020CD7F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -618,12 +906,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SZBVKVY4W2;
-				INFOPLIST_FILE = Source/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jjgp.ReddiX;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jjgp.$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -637,12 +929,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SZBVKVY4W2;
-				INFOPLIST_FILE = Source/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jjgp.ReddiX;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jjgp.$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -656,13 +952,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SZBVKVY4W2;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jjgp.ReddiXTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jjgp.$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -677,13 +973,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SZBVKVY4W2;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jjgp.ReddiXTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jjgp.$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -701,14 +997,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = RAPI/Info.plist;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jjgp.RAPI;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jjgp.$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -728,14 +1024,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = RAPI/Info.plist;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jjgp.RAPI;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jjgp.$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -755,13 +1051,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = RAPITests/Info.plist;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jjgp.RAPITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jjgp.$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -779,13 +1075,120 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = RAPITests/Info.plist;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jjgp.RAPITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jjgp.$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReddiX.app/ReddiX";
+			};
+			name = Release;
+		};
+		B732BE7A216169930020CD7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SZBVKVY4W2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jjgp.$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B732BE7B216169930020CD7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SZBVKVY4W2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jjgp.$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B732BE7D216169930020CD7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZBVKVY4W2;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jjgp.$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReddiX.app/ReddiX";
+			};
+			name = Debug;
+		};
+		B732BE7E216169930020CD7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZBVKVY4W2;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jjgp.$(TARGET_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -837,6 +1240,24 @@
 			buildConfigurations = (
 				B717262F2160FBE800585459 /* Debug */,
 				B71726302160FBE800585459 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B732BE79216169930020CD7F /* Build configuration list for PBXNativeTarget "UNI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B732BE7A216169930020CD7F /* Debug */,
+				B732BE7B216169930020CD7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B732BE7C216169930020CD7F /* Build configuration list for PBXNativeTarget "UNITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B732BE7D216169930020CD7F /* Debug */,
+				B732BE7E216169930020CD7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

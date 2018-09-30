@@ -25,10 +25,10 @@ public struct Posting: Decodable {
         
     }
     
-    let id: String
-    let subreddit: String
-    let title: String
-    let url: String
+    public let id: String
+    public let subreddit: String
+    public let title: String
+    public let url: String
     
 }
 
@@ -41,6 +41,17 @@ extension Posting {
         subreddit = try container.decode(String.self, forKey: .subreddit)
         title = try container.decode(String.self, forKey: .title)
         url = try container.decode(String.self, forKey: .url)
+    }
+    
+}
+
+extension Posting: Equatable {
+    
+    public static func ==(lhs: Posting, rhs: Posting) -> Bool {
+        return lhs.id == rhs.id &&
+            lhs.subreddit == rhs.subreddit &&
+            lhs.title == rhs.title &&
+            lhs.url == rhs.url
     }
     
 }

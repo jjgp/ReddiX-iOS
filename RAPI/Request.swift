@@ -14,6 +14,8 @@ public enum Method: String {
     
 }
 
+public typealias Parameters = [String: String]
+
 public enum RequestError: Error {
     
     case urlInvalid
@@ -23,15 +25,14 @@ public enum RequestError: Error {
 public struct Request<J: JSON>: Processable {
     
     public typealias Map = J
-    public typealias Parameters = [String: String]
     
     public let method: Method
     public let parameters: Parameters
     public let URLPath: String
     
     public init(method: Method = .get,
-                parameters: Parameters = ["count": "25"],
-                URLPath: String = "/.json") {
+                parameters: Parameters,
+                URLPath: String) {
         self.method = method
         self.parameters = parameters
         self.URLPath = URLPath
