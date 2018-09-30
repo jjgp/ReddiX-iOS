@@ -13,6 +13,19 @@
 		B71725E72160105100585459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71725E62160105100585459 /* Assets.xcassets */; };
 		B71725EA2160105100585459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71725E82160105100585459 /* LaunchScreen.storyboard */; };
 		B71725F52160105200585459 /* ReddiXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71725F42160105200585459 /* ReddiXTests.swift */; };
+		B717261C2160FBE800585459 /* RAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71726132160FBE700585459 /* RAPI.framework */; };
+		B71726252160FBE800585459 /* RAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = B71726152160FBE700585459 /* RAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B71726282160FBE800585459 /* RAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71726132160FBE700585459 /* RAPI.framework */; };
+		B71726292160FBE800585459 /* RAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B71726132160FBE700585459 /* RAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B71726312160FBF800585459 /* RAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726002160136100585459 /* RAPI.swift */; };
+		B71726322160FCFF00585459 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7172602216014A000585459 /* Request.swift */; };
+		B71726342160FD0700585459 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726042160159400585459 /* JSON.swift */; };
+		B71726392161124F00585459 /* Reddit.json in Resources */ = {isa = PBXBuildFile; fileRef = B71726382161124F00585459 /* Reddit.json */; };
+		B717263B2161139200585459 /* Children.swift in Sources */ = {isa = PBXBuildFile; fileRef = B717263A2161139200585459 /* Children.swift */; };
+		B717263C216114A100585459 /* RAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726222160FBE800585459 /* RAPITests.swift */; };
+		B717263D21611C3600585459 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71726362161122F00585459 /* OHHTTPStubs.framework */; };
+		B717264F21611E9600585459 /* OHHTTPStubs.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B717264E21611E9600585459 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B71726512161241800585459 /* Posting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726502161241800585459 /* Posting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +36,53 @@
 			remoteGlobalIDString = B71725DB2160105000585459;
 			remoteInfo = ReddiX;
 		};
+		B717261D2160FBE800585459 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B71725D42160105000585459 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B71726122160FBE700585459;
+			remoteInfo = RAPI;
+		};
+		B717261F2160FBE800585459 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B71725D42160105000585459 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B71725DB2160105000585459;
+			remoteInfo = ReddiX;
+		};
+		B71726262160FBE800585459 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B71725D42160105000585459 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B71726122160FBE700585459;
+			remoteInfo = RAPI;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B717262D2160FBE800585459 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B71726292160FBE800585459 /* RAPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B717263E21611C6100585459 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B717264F21611E9600585459 /* OHHTTPStubs.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B71725DC2160105000585459 /* ReddiX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReddiX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +95,20 @@
 		B71725F02160105200585459 /* ReddiXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReddiXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71725F42160105200585459 /* ReddiXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReddiXTests.swift; sourceTree = "<group>"; };
 		B71725F62160105200585459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B71726002160136100585459 /* RAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAPI.swift; sourceTree = "<group>"; };
+		B7172602216014A000585459 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		B71726042160159400585459 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		B71726132160FBE700585459 /* RAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B71726152160FBE700585459 /* RAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAPI.h; sourceTree = "<group>"; };
+		B71726162160FBE700585459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B717261B2160FBE800585459 /* RAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B71726222160FBE800585459 /* RAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAPITests.swift; sourceTree = "<group>"; };
+		B71726242160FBE800585459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B71726362161122F00585459 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		B71726382161124F00585459 /* Reddit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Reddit.json; sourceTree = "<group>"; };
+		B717263A2161139200585459 /* Children.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Children.swift; sourceTree = "<group>"; };
+		B717264E21611E9600585459 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OHHTTPStubs.framework; sourceTree = "<group>"; };
+		B71726502161241800585459 /* Posting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B71726282160FBE800585459 /* RAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +124,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B71726102160FBE700585459 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B71726182160FBE800585459 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B717263D21611C3600585459 /* OHHTTPStubs.framework in Frameworks */,
+				B717261C2160FBE800585459 /* RAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +151,11 @@
 			children = (
 				B71725DE2160105000585459 /* Source */,
 				B71725F32160105200585459 /* Tests */,
+				B71726142160FBE700585459 /* RAPI */,
+				B71726212160FBE800585459 /* RAPITests */,
 				B71725DD2160105000585459 /* Products */,
+				B71726352161122E00585459 /* Frameworks */,
+				B717264D21611E1E00585459 /* Carthage */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +164,8 @@
 			children = (
 				B71725DC2160105000585459 /* ReddiX.app */,
 				B71725F02160105200585459 /* ReddiXTests.xctest */,
+				B71726132160FBE700585459 /* RAPI.framework */,
+				B717261B2160FBE800585459 /* RAPITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +192,67 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		B71726062160159800585459 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				B717263A2161139200585459 /* Children.swift */,
+				B71726042160159400585459 /* JSON.swift */,
+				B71726502161241800585459 /* Posting.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		B71726142160FBE700585459 /* RAPI */ = {
+			isa = PBXGroup;
+			children = (
+				B71726162160FBE700585459 /* Info.plist */,
+				B71726062160159800585459 /* JSON */,
+				B71726152160FBE700585459 /* RAPI.h */,
+				B71726002160136100585459 /* RAPI.swift */,
+				B7172602216014A000585459 /* Request.swift */,
+			);
+			path = RAPI;
+			sourceTree = "<group>";
+		};
+		B71726212160FBE800585459 /* RAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				B71726242160FBE800585459 /* Info.plist */,
+				B71726222160FBE800585459 /* RAPITests.swift */,
+				B71726382161124F00585459 /* Reddit.json */,
+			);
+			path = RAPITests;
+			sourceTree = "<group>";
+		};
+		B71726352161122E00585459 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B71726362161122F00585459 /* OHHTTPStubs.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B717264D21611E1E00585459 /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				B717264E21611E9600585459 /* OHHTTPStubs.framework */,
+			);
+			name = Carthage;
+			path = /Users/jjgp/Workspace/ReddiX/Carthage/Build/iOS;
+			sourceTree = "<absolute>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B717260E2160FBE700585459 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B71726252160FBE800585459 /* RAPI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		B71725DB2160105000585459 /* ReddiX */ = {
@@ -106,10 +262,12 @@
 				B71725D82160105000585459 /* Sources */,
 				B71725D92160105000585459 /* Frameworks */,
 				B71725DA2160105000585459 /* Resources */,
+				B717262D2160FBE800585459 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B71726272160FBE800585459 /* PBXTargetDependency */,
 			);
 			name = ReddiX;
 			productName = ReddiX;
@@ -134,6 +292,44 @@
 			productReference = B71725F02160105200585459 /* ReddiXTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B71726122160FBE700585459 /* RAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B717262A2160FBE800585459 /* Build configuration list for PBXNativeTarget "RAPI" */;
+			buildPhases = (
+				B717260E2160FBE700585459 /* Headers */,
+				B717260F2160FBE700585459 /* Sources */,
+				B71726102160FBE700585459 /* Frameworks */,
+				B71726112160FBE700585459 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RAPI;
+			productName = RAPI;
+			productReference = B71726132160FBE700585459 /* RAPI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B717261A2160FBE800585459 /* RAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B717262E2160FBE800585459 /* Build configuration list for PBXNativeTarget "RAPITests" */;
+			buildPhases = (
+				B71726172160FBE800585459 /* Sources */,
+				B71726182160FBE800585459 /* Frameworks */,
+				B71726192160FBE800585459 /* Resources */,
+				B717263E21611C6100585459 /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B717261E2160FBE800585459 /* PBXTargetDependency */,
+				B71726202160FBE800585459 /* PBXTargetDependency */,
+			);
+			name = RAPITests;
+			productName = RAPITests;
+			productReference = B717261B2160FBE800585459 /* RAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,6 +344,13 @@
 						CreatedOnToolsVersion = 10.0;
 					};
 					B71725EF2160105200585459 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = B71725DB2160105000585459;
+					};
+					B71726122160FBE700585459 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					B717261A2160FBE800585459 = {
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = B71725DB2160105000585459;
 					};
@@ -168,6 +371,8 @@
 			targets = (
 				B71725DB2160105000585459 /* ReddiX */,
 				B71725EF2160105200585459 /* ReddiXTests */,
+				B71726122160FBE700585459 /* RAPI */,
+				B717261A2160FBE800585459 /* RAPITests */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +392,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B71726112160FBE700585459 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B71726192160FBE800585459 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B71726392161124F00585459 /* Reddit.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +430,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B717260F2160FBE700585459 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B71726312160FBF800585459 /* RAPI.swift in Sources */,
+				B71726322160FCFF00585459 /* Request.swift in Sources */,
+				B717263B2161139200585459 /* Children.swift in Sources */,
+				B71726342160FD0700585459 /* JSON.swift in Sources */,
+				B71726512161241800585459 /* Posting.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B71726172160FBE800585459 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B717263C216114A100585459 /* RAPITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -217,6 +457,21 @@
 			isa = PBXTargetDependency;
 			target = B71725DB2160105000585459 /* ReddiX */;
 			targetProxy = B71725F12160105200585459 /* PBXContainerItemProxy */;
+		};
+		B717261E2160FBE800585459 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B71726122160FBE700585459 /* RAPI */;
+			targetProxy = B717261D2160FBE800585459 /* PBXContainerItemProxy */;
+		};
+		B71726202160FBE800585459 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B71725DB2160105000585459 /* ReddiX */;
+			targetProxy = B717261F2160FBE800585459 /* PBXContainerItemProxy */;
+		};
+		B71726272160FBE800585459 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B71726122160FBE700585459 /* RAPI */;
+			targetProxy = B71726262160FBE800585459 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -359,8 +614,10 @@
 		B71725FA2160105200585459 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZBVKVY4W2;
 				INFOPLIST_FILE = Source/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -376,8 +633,10 @@
 		B71725FB2160105200585459 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZBVKVY4W2;
 				INFOPLIST_FILE = Source/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -396,6 +655,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZBVKVY4W2;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -416,6 +676,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZBVKVY4W2;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -423,6 +684,108 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jjgp.ReddiXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReddiX.app/ReddiX";
+			};
+			name = Release;
+		};
+		B717262B2160FBE800585459 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjgp.RAPI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B717262C2160FBE800585459 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjgp.RAPI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B717262F2160FBE800585459 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZBVKVY4W2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RAPITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjgp.RAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReddiX.app/ReddiX";
+			};
+			name = Debug;
+		};
+		B71726302160FBE800585459 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZBVKVY4W2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RAPITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjgp.RAPITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,6 +819,24 @@
 			buildConfigurations = (
 				B71725FD2160105200585459 /* Debug */,
 				B71725FE2160105200585459 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B717262A2160FBE800585459 /* Build configuration list for PBXNativeTarget "RAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B717262B2160FBE800585459 /* Debug */,
+				B717262C2160FBE800585459 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B717262E2160FBE800585459 /* Build configuration list for PBXNativeTarget "RAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B717262F2160FBE800585459 /* Debug */,
+				B71726302160FBE800585459 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
