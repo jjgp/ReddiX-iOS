@@ -42,6 +42,7 @@
 		B7FD1D23216182430066BCB2 /* AsyncMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD1D22216182430066BCB2 /* AsyncMiddleware.swift */; };
 		B7FD1D282161C1DA0066BCB2 /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */; };
 		B7FD1D292161C3B20066BCB2 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE8021616B550020CD7F /* ReSwift.framework */; };
+		C6E1984F2162C479007E43B5 /* PostingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E1984E2162C479007E43B5 /* PostingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 		B732BE91216171B60020CD7F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		B7FD1D22216182430066BCB2 /* AsyncMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncMiddleware.swift; sourceTree = "<group>"; };
 		B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingMiddleware.swift; sourceTree = "<group>"; };
+		C6E1984E2162C479007E43B5 /* PostingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,11 +252,12 @@
 			isa = PBXGroup;
 			children = (
 				B71725DF2160105000585459 /* AppDelegate.swift */,
-				B71725E12160105000585459 /* ChildrenViewController.swift */,
-				B71725E32160105000585459 /* Main.storyboard */,
 				B71725E62160105100585459 /* Assets.xcassets */,
-				B71725E82160105100585459 /* LaunchScreen.storyboard */,
 				B71725EB2160105100585459 /* Info.plist */,
+				B71725E82160105100585459 /* LaunchScreen.storyboard */,
+				B71725E32160105000585459 /* Main.storyboard */,
+				C6E1984D2162C457007E43B5 /* Scenes */,
+				C6E1984C2162C450007E43B5 /* Views */,
 			);
 			path = ReddiX;
 			sourceTree = "<group>";
@@ -374,6 +377,22 @@
 				B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */,
 			);
 			path = Middleware;
+			sourceTree = "<group>";
+		};
+		C6E1984C2162C450007E43B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C6E1984E2162C479007E43B5 /* PostingTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C6E1984D2162C457007E43B5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B71725E12160105000585459 /* ChildrenViewController.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -667,6 +686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E1984F2162C479007E43B5 /* PostingTableViewCell.swift in Sources */,
 				B71725E22160105000585459 /* ChildrenViewController.swift in Sources */,
 				B71725E02160105000585459 /* AppDelegate.swift in Sources */,
 			);
@@ -834,7 +854,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -889,7 +909,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
