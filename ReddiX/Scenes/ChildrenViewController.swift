@@ -39,6 +39,9 @@ extension ChildrenViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 140
+        
         store.dispatch(FetchChildren())
     }
     
@@ -65,13 +68,21 @@ extension ChildrenViewController {
 
 extension ChildrenViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return postings.count
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Posting", for: indexPath)
-        cell.textLabel?.text = postings[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Posting", for: indexPath) as! PostingTableViewCell
+        cell.update(with: postings[indexPath.section])
         return cell
     }
     
