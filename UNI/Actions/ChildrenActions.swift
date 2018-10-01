@@ -12,16 +12,20 @@ import ReSwift
 public enum ChildrenActions: Action {
     
     case appendChildren(Children)
-    case clearChildren
     case isFetching(Bool)
     case isErrored(Bool)
+    case replaceChildren(Children)
     case setSubreddit(String)
     
 }
 
 public struct FetchChildren: AsyncAction {
     
-    public init() {}
+    let replacement: Bool
+    
+    public init(replacement: Bool = false) {
+        self.replacement = replacement
+    }
     
     func run(dispatch: @escaping DispatchFunction, getState: @escaping () -> AppState?) {
         dispatch(ChildrenActions.isFetching(true))
@@ -29,11 +33,12 @@ public struct FetchChildren: AsyncAction {
         let state = getState()
         
         var parameters: Parameters = ["count": "25"]
-        if let after = state?
-            .children
-            .children
-            .last?
-            .after {
+        if !replacement,
+            let after = state?
+                .children
+                .children
+                .last?
+                .after {
             parameters["after"] = after
         }
         
@@ -49,7 +54,11 @@ public struct FetchChildren: AsyncAction {
             if error != nil {
                 dispatch(ChildrenActions.isErrored(true))
             } else if let children = children {
-                dispatch(ChildrenActions.appendChildren(children))
+                if self.replacement {
+                    dispatch(ChildrenActions.replaceChildren(children))
+                } else {
+                    dispatch(ChildrenActions.appendChildren(children))
+                }
             }
             dispatch(ChildrenActions.isFetching(false))
         }
