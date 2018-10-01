@@ -24,9 +24,9 @@ public struct Children: JSON {
         
     }
     
-    let after: String?
-    let before: String?
-    let children: [Posting]
+    public let after: String?
+    public let before: String?
+    public let children: [Posting]
     
 }
 
@@ -38,6 +38,16 @@ extension Children {
         after = try container.decodeIfPresent(String.self, forKey: .after)
         before = try container.decodeIfPresent(String.self, forKey: .before)
         children = try container.decode([Posting].self, forKey: .children)
+    }
+    
+}
+
+extension Children: Equatable {
+    
+    public static func ==(lhs: Children, rhs: Children) -> Bool {
+        return lhs.after == rhs.after &&
+            lhs.before == rhs.before &&
+            lhs.children == rhs.children
     }
     
 }
