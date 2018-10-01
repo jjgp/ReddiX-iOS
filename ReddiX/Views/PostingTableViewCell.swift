@@ -16,6 +16,8 @@ class PostingTableViewCell: UITableViewCell {
     
 }
 
+// MARK:- Interface
+
 extension PostingTableViewCell {
     
     func update(with posting: Posting) {

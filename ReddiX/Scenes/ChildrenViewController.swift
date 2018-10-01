@@ -15,6 +15,8 @@ class ChildrenViewController: UIViewController, StoreSubscriber {
     
     typealias StoreSubscriberStateType = ChildrenState
     
+    var isRefreshing = false
+    var isFetching = false
     var postings: [Posting] = []
     @IBOutlet var tableView: UITableView!
     
@@ -39,10 +41,26 @@ extension ChildrenViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self,
+                                 action: #selector(refreshChildren),
+                                 for: .valueChanged)
+        tableView.refreshControl = refreshControl
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 140
         
         store.dispatch(FetchChildren())
+    }
+    
+}
+
+// MARK:- Refresh
+
+extension ChildrenViewController {
+    
+    @objc func refreshChildren() {
+        isRefreshing = true
+        store.dispatch(FetchChildren(replacement: true))
     }
     
 }
@@ -52,12 +70,26 @@ extension ChildrenViewController {
 extension ChildrenViewController {
     
     func newState(state: ChildrenState) {
+        isFetching = state.isFetching
+        
         let newPostings = state.children.flatMap { $0.children }
+        
+        if !state.isFetching, isRefreshing {
+            isRefreshing = false
+            DispatchQueue.main.async {
+                self.tableView.refreshControl?.endRefreshing()
+            }
+        }
         
         if postings != newPostings {
             postings = newPostings
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                if self.postings.count > 0 {
+                    self.tableView.isHidden = false
+                    self.tableView.reloadData()
+                } else {
+                    self.tableView.isHidden = true
+                }
             }
         }
     }
@@ -88,9 +120,24 @@ extension ChildrenViewController: UITableViewDataSource {
     
 }
 
-// MARK:- UITableViewDelegate
+// MARK:- UIScrollViewDelegate
 
-extension ChildrenViewController: UITableViewDelegate {
+extension ChildrenViewController {
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard !isFetching else {
+            return
+        }
+        
+        // NOTE: https://stackoverflow.com/a/31454471
+        let offset = scrollView.contentOffset.y + scrollView.frame.size.height
+        if (offset >= scrollView.contentSize.height) {
+            store.dispatch(FetchChildren())
+        }
+    }
     
 }
 
+// MARK:- UITableViewDelegate
+
+extension ChildrenViewController: UITableViewDelegate {}

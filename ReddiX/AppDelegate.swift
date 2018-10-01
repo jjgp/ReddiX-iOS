@@ -10,6 +10,8 @@ import ReSwift
 import UIKit
 import UNI
 
+// MARK:- Store Singleton
+
 #if DEBUG
 let middleware = [loggingMiddleware]
 #else
@@ -17,6 +19,8 @@ let middleware = []
 #endif
 
 var store: Store<AppState> = createStore(middleware: middleware)
+
+// MARK:- AppDelegate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
