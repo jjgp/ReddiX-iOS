@@ -8,6 +8,7 @@
 
 import RAPI
 import ReSwift
+import SafariServices
 import UIKit
 import UNI
 
@@ -18,6 +19,7 @@ class ChildrenViewController: UIViewController, StoreSubscriber {
     var isRefreshing = false
     var isFetching = false
     var postings: [Posting] = []
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
 }
@@ -41,6 +43,9 @@ extension ChildrenViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
+        
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self,
                                  action: #selector(refreshChildren),
@@ -49,18 +54,26 @@ extension ChildrenViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 140
         
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        recognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(recognizer)
+        
         store.dispatch(FetchChildren())
     }
     
 }
 
-// MARK:- Refresh
+// MARK:- Actions
 
 extension ChildrenViewController {
     
     @objc func refreshChildren() {
         isRefreshing = true
         store.dispatch(FetchChildren(replacement: true))
+    }
+    
+    @objc func tapped() {
+        searchBar.resignFirstResponder()
     }
     
 }
@@ -96,6 +109,32 @@ extension ChildrenViewController {
     
 }
 
+// MARK:- UISearchBarDelegate
+
+extension ChildrenViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else {
+            return
+        }
+        
+        searchBar.resignFirstResponder()
+        fetch(subreddit: text)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        fetch()
+    }
+    
+    func fetch(subreddit: String? = nil) {
+        store.dispatch(ChildrenActions.clearChildren)
+        store.dispatch(ChildrenActions.setSubreddit(subreddit))
+        store.dispatch(FetchChildren(replacement: true))
+    }
+    
+}
+
 // MARK:- UITableViewDataSource
 
 extension ChildrenViewController: UITableViewDataSource {
@@ -120,9 +159,13 @@ extension ChildrenViewController: UITableViewDataSource {
     
 }
 
-// MARK:- UIScrollViewDelegate
+// MARK:- UITableViewDelegate
 
-extension ChildrenViewController {
+extension ChildrenViewController: UITableViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchBar.resignFirstResponder()
+    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         guard !isFetching else {
@@ -136,8 +179,14 @@ extension ChildrenViewController {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let url = URL(string: postings[indexPath.section].url) else {
+            return
+        }
+        
+        self.present(SFSafariViewController(url: url), animated: true)
+    }
+    
 }
-
-// MARK:- UITableViewDelegate
-
-extension ChildrenViewController: UITableViewDelegate {}
