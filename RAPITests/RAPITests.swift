@@ -6,8 +6,8 @@
 //  Copyright © 2018 Jason Prasad. All rights reserved.
 //
 
-import XCTest
 import OHHTTPStubs
+import XCTest
 @testable import RAPI
 
 class RAPITests: XCTestCase {
@@ -22,7 +22,7 @@ class RAPITests: XCTestCase {
     }
 
     func testProcessChildren() {
-        stubRedditResponse()
+        stubChildrenResponse()
 
         let expect = expectation(description: "process fulfills")
         rapi.process(request) { children, response, error in
@@ -36,7 +36,7 @@ class RAPITests: XCTestCase {
     }
     
     func testProcessHTTPFailure() {
-        stubRedditResponse(status: 500)
+        stubChildrenResponse(status: 500)
         
         let expect = expectation(description: "process fulfills")
         rapi.process(request) { children, response, error in
@@ -49,7 +49,7 @@ class RAPITests: XCTestCase {
     }
     
     func testProcessMapFailure() {
-        stubRedditResponse(fixture: nil)
+        stubChildrenResponse(fixture: nil)
         
         let expect = expectation(description: "process fulfills")
         rapi.process(request) { children, response, error in
@@ -65,18 +65,4 @@ class RAPITests: XCTestCase {
         wait(for: [expect], timeout: 1.0)
     }
     
-    func stubRedditResponse(fixture named: String? = "Reddit.json", status: Int32 = 200) {
-        stub(condition: isHost("reddit.com") && isPath("/.json")) { _ in
-            if let named = named {
-                let stubPath = OHPathForFile(named, type(of: self))
-                return fixture(filePath: stubPath!,
-                               status: status,
-                               headers: ["Content-Type":"application/json"])
-            } else {
-                return OHHTTPStubsResponse(data: Data(), statusCode: status, headers: nil)
-            }
-            
-        }
-    }
-
 }
