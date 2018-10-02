@@ -12,10 +12,11 @@ import ReSwift
 public enum ChildrenActions: Action {
     
     case appendChildren(Children)
+    case clearChildren
     case isFetching(Bool)
     case isErrored(Bool)
     case replaceChildren(Children)
-    case setSubreddit(String)
+    case setSubreddit(String?)
     
 }
 
@@ -54,11 +55,10 @@ public struct FetchChildren: AsyncAction {
             if error != nil {
                 dispatch(ChildrenActions.isErrored(true))
             } else if let children = children {
-                if self.replacement {
-                    dispatch(ChildrenActions.replaceChildren(children))
-                } else {
-                    dispatch(ChildrenActions.appendChildren(children))
-                }
+                let action = self.replacement ?
+                    ChildrenActions.replaceChildren(children) :
+                    ChildrenActions.appendChildren(children)
+                dispatch(action)
             }
             dispatch(ChildrenActions.isFetching(false))
         }

@@ -253,11 +253,11 @@
 			children = (
 				B71725DF2160105000585459 /* AppDelegate.swift */,
 				B71725E62160105100585459 /* Assets.xcassets */,
+				B71725E12160105000585459 /* ChildrenViewController.swift */,
 				B71725EB2160105100585459 /* Info.plist */,
 				B71725E82160105100585459 /* LaunchScreen.storyboard */,
 				B71725E32160105000585459 /* Main.storyboard */,
-				C6E1984D2162C457007E43B5 /* Scenes */,
-				C6E1984C2162C450007E43B5 /* Views */,
+				C6E1984E2162C479007E43B5 /* PostingTableViewCell.swift */,
 			);
 			path = ReddiX;
 			sourceTree = "<group>";
@@ -377,22 +377,6 @@
 				B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */,
 			);
 			path = Middleware;
-			sourceTree = "<group>";
-		};
-		C6E1984C2162C450007E43B5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				C6E1984E2162C479007E43B5 /* PostingTableViewCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		C6E1984D2162C457007E43B5 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				B71725E12160105000585459 /* ChildrenViewController.swift */,
-			);
-			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
