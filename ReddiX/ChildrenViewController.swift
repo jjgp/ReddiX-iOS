@@ -28,18 +28,6 @@ class ChildrenViewController: UIViewController, StoreSubscriber {
 
 extension ChildrenViewController {
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        store.subscribe(self) { $0.select { $0.children }.skip(when: ==) }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        store.unsubscribe(self)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,6 +47,18 @@ extension ChildrenViewController {
         view.addGestureRecognizer(recognizer)
         
         store.dispatch(FetchChildren())
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        store.subscribe(self) { $0.select { $0.children }.skip(when: ==) }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        store.unsubscribe(self)
     }
     
 }

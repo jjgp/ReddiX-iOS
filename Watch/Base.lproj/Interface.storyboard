@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="Refresh" id="2ha-h4-vL8">
+                            <connections>
+                                <action selector="refresh" destination="AgC-eL-Hgc" id="paS-o9-y8R"/>
+                            </connections>
+                        </button>
+                        <table alignment="left" id="lgP-Z3-7S5">
+                            <items>
+                                <tableRow identifier="PostingRow" selectable="NO" id="DWY-QU-qtf" customClass="PostingRow" customModule="Watch_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="5" id="EfQ-aa-BKe">
+                                        <items>
+                                            <label alignment="left" text="Subreddit" id="JlS-dx-3UU" userLabel="Subreddit">
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                            </label>
+                                            <label alignment="left" text="Title" numberOfLines="0" id="JJW-ki-1JM" userLabel="Title">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="subredditLabel" destination="JlS-dx-3UU" id="OdB-Xl-vtx"/>
+                                        <outlet property="titleLabel" destination="JJW-ki-1JM" id="HpF-Tw-NN3"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="lgP-Z3-7S5" id="SZd-Je-BCl"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
