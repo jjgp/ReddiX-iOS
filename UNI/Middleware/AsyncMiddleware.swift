@@ -19,6 +19,7 @@ public let asyncMiddleware: Middleware<AppState> = { dispatch, getState in
         return { action in
             if let action = action as? AsyncAction {
                 action.run(dispatch: dispatch, getState: getState)
+                return
             }
             next(action)
         }

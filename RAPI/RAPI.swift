@@ -33,12 +33,13 @@ public extension RAPI {
     
     typealias Completion<J: JSON> = (J?, HTTPURLResponse?, Error?) -> Void
     
-    func process<P: Processable>(_ request: P, completion: Completion<P.Map>? = nil) {
+    @discardableResult
+    func process<P: Processable>(_ request: P, completion: Completion<P.Map>? = nil) -> URLSessionDataTask {
         /*
          * NOTE: try! in constructing the URLRequest, if we are constructing
          * incorrect URLs that is a development time error
          */
-        session.dataTask(with: try! request.URLRequest(for: host)) { data, response, error in
+        let task = session.dataTask(with: try! request.URLRequest(for: host)) { data, response, error in
             let response = response as? HTTPURLResponse
             var json: P.Map?
             var completionError = error
@@ -56,7 +57,10 @@ public extension RAPI {
             }
             
             completion?(json, response, completionError)
-        }.resume()
+        }
+        task.resume()
+        
+        return task
     }
     
 }
