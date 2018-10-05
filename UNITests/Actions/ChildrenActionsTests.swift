@@ -25,42 +25,42 @@ class ChildrenActionsTests: XCTestCase {
         
         let expectedChildren = try! Children.map(forResource: "Reddit", ofType: "json")!
         
-        let expect = ExpectAsyncAction<AppState>(FetchChildren())
+        let expect = ExpectActionCreator<AppState>(fetchChildren())
+            .returnsNil()
             .dispatches(ChildrenActions.isFetching(true))
-            .getsState(AppState(children: ChildrenState()))
             .dispatches(ChildrenActions.appendChildren(expectedChildren))
             .dispatches(ChildrenActions.isFetching(false))
-            .run()
+            .run(with: AppState())
         
         wait(for: [expect], timeout: 1.0)
     }
     
     func testFetchChildrenWithReplacement() {
         stubChildrenResponse()
-        
+
         let expectedChildren = try! Children.map(forResource: "Reddit", ofType: "json")!
-        
-        let expect = ExpectAsyncAction<AppState>(FetchChildren(replacement: true))
+
+        let expect = ExpectActionCreator<AppState>(fetchChildren(replacement: true))
+            .returnsNil()
             .dispatches(ChildrenActions.isFetching(true))
-            .getsState(AppState(children: ChildrenState()))
             .dispatches(ChildrenActions.replaceChildren(expectedChildren))
             .dispatches(ChildrenActions.isFetching(false))
-            .run()
-        
+            .run(with: AppState())
+
         wait(for: [expect], timeout: 1.0)
     }
-    
+
     func testFetchChildrenErrors() {
         stubChildrenResponse(status: 500)
-        
-        let expect = ExpectAsyncAction<AppState>(FetchChildren(replacement: true))
+
+        let expect = ExpectActionCreator<AppState>(fetchChildren())
+            .returnsNil()
             .dispatches(ChildrenActions.isFetching(true))
-            .getsState(AppState(children: ChildrenState()))
             .dispatches(ChildrenActions.isErrored(true))
             .dispatches(ChildrenActions.isFetching(false))
-            .run()
-        
+            .run(with: AppState(children: ChildrenState()))
+
         wait(for: [expect], timeout: 1.0)
     }
-    
+
 }

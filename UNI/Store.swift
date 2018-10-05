@@ -9,10 +9,7 @@
 import ReSwift
 
 public func createStore(middleware: [Middleware<AppState>]? = nil) -> Store<AppState> {
-    var middleware = middleware ?? []
-    middleware.append(asyncMiddleware)
-    
     return Store(reducer: appReducer,
                  state: nil,
-                 middleware: middleware)
+                 middleware: middleware ?? [])
 }
