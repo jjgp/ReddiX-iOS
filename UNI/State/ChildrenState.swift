@@ -11,7 +11,8 @@ import ReSwift
 
 public struct ChildrenState: StateType {
     
-    public var children = [Children]()
+    public var after: String?
+    public var children = [Child]()
     public var isErrored = false
     public var isFetching = false
     public var subreddit: String?
@@ -23,7 +24,8 @@ public struct ChildrenState: StateType {
 extension ChildrenState: Equatable {
     
     public static func ==(lhs: ChildrenState, rhs: ChildrenState) -> Bool {
-        return lhs.children == rhs.children &&
+        return lhs.after == rhs.after &&
+            lhs.children == rhs.children &&
             lhs.isErrored == rhs.isErrored &&
             lhs.isFetching == rhs.isFetching &&
             lhs.subreddit == rhs.subreddit

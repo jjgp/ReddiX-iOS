@@ -26,6 +26,7 @@
 		B717263D21611C3600585459 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71726362161122F00585459 /* OHHTTPStubs.framework */; };
 		B717264F21611E9600585459 /* OHHTTPStubs.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B717264E21611E9600585459 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B71726512161241800585459 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726502161241800585459 /* Child.swift */; };
+		B727D3BC2168034600CF39E6 /* ChildrenSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B727D3BB2168034600CF39E6 /* ChildrenSearchBar.swift */; };
 		B732BE6B216169930020CD7F /* UNI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE62216169930020CD7F /* UNI.framework */; };
 		B732BE74216169930020CD7F /* UNI.h in Headers */ = {isa = PBXBuildFile; fileRef = B732BE64216169930020CD7F /* UNI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B732BE77216169930020CD7F /* UNI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE62216169930020CD7F /* UNI.framework */; };
@@ -69,6 +70,7 @@
 		B754383121630A2D00F85B66 /* ChildRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B754383021630A2D00F85B66 /* ChildRow.swift */; };
 		B7ADC0512167AFD00090E3D2 /* MockStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADC0502167AFD00090E3D2 /* MockStore.swift */; };
 		B7ADC0532167BCCB0090E3D2 /* AppState+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADC0522167BCCB0090E3D2 /* AppState+Extensions.swift */; };
+		B7DB9EB82167EE0500C447DE /* ChildrenTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DB9EB72167EE0500C447DE /* ChildrenTableView.swift */; };
 		B7FD1D282161C1DA0066BCB2 /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */; };
 		B7FD1D292161C3B20066BCB2 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE8021616B550020CD7F /* ReSwift.framework */; };
 		C647B68D2163B3B70006C65A /* OHHTTPStubs.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C647B68C2163B3B70006C65A /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -261,6 +263,7 @@
 		B717263A2161139200585459 /* Children.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Children.swift; sourceTree = "<group>"; };
 		B717264E21611E9600585459 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OHHTTPStubs.framework; sourceTree = "<group>"; };
 		B71726502161241800585459 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
+		B727D3BB2168034600CF39E6 /* ChildrenSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenSearchBar.swift; sourceTree = "<group>"; };
 		B732BE62216169930020CD7F /* UNI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UNI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B732BE64216169930020CD7F /* UNI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNI.h; sourceTree = "<group>"; };
 		B732BE65216169930020CD7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -288,6 +291,7 @@
 		B754383021630A2D00F85B66 /* ChildRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRow.swift; sourceTree = "<group>"; };
 		B7ADC0502167AFD00090E3D2 /* MockStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStore.swift; sourceTree = "<group>"; };
 		B7ADC0522167BCCB0090E3D2 /* AppState+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+Extensions.swift"; sourceTree = "<group>"; };
+		B7DB9EB72167EE0500C447DE /* ChildrenTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenTableView.swift; sourceTree = "<group>"; };
 		B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingMiddleware.swift; sourceTree = "<group>"; };
 		C647B68C2163B3B70006C65A /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OHHTTPStubs.framework; sourceTree = "<group>"; };
 		C647B6902163B41F0006C65A /* ChildrenActionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenActionsTests.swift; sourceTree = "<group>"; };
@@ -573,6 +577,8 @@
 		B7DB9EB52167DE6500C447DE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B727D3BB2168034600CF39E6 /* ChildrenSearchBar.swift */,
+				B7DB9EB72167EE0500C447DE /* ChildrenTableView.swift */,
 				C6E1984E2162C479007E43B5 /* ChildTableViewCell.swift */,
 			);
 			path = Views;
@@ -1080,7 +1086,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6E1984F2162C479007E43B5 /* ChildTableViewCell.swift in Sources */,
+				B727D3BC2168034600CF39E6 /* ChildrenSearchBar.swift in Sources */,
 				B71725E22160105000585459 /* ChildrenViewController.swift in Sources */,
+				B7DB9EB82167EE0500C447DE /* ChildrenTableView.swift in Sources */,
 				B71725E02160105000585459 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

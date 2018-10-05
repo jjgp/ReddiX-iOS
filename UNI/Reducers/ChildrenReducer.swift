@@ -17,7 +17,8 @@ public func childrenReducer(action: Action, state: ChildrenState?) -> ChildrenSt
 
     switch action {
     case .appendChildren(let children):
-        state.children.append(children)
+        state.children.append(contentsOf: children.children)
+        state.after = children.after
     case .clearChildren:
         state.children = []
     case .isErrored(let isErrored):
@@ -28,7 +29,8 @@ public func childrenReducer(action: Action, state: ChildrenState?) -> ChildrenSt
         }
         state.isFetching = isFetching
     case .replaceChildren(let children):
-        state.children = [children]
+        state.children = children.children
+        state.after = children.after
     case .setSubreddit(let subreddit):
         state.subreddit = subreddit
     }
