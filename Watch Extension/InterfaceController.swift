@@ -16,7 +16,7 @@ class InterfaceController: WKInterfaceController, StoreSubscriber {
     
     typealias StoreSubscriberStateType = ChildrenState
     
-    var rChildren: [Child] = []
+    var state: ChildrenState?
     @IBOutlet var table: WKInterfaceTable!
 
     @IBAction func refresh() {
@@ -54,10 +54,10 @@ extension InterfaceController {
 extension InterfaceController {
     
     func newState(state: ChildrenState) {
-        let newPostings = state.children.flatMap { $0.children }
+        let shouldReload = self.state?.children == state.children
+        self.state = state
         
-        if rChildren != newPostings {
-            rChildren = newPostings
+        if shouldReload {
             reloadTable()
         }
     }
@@ -69,9 +69,9 @@ extension InterfaceController {
 extension InterfaceController {
     
     func reloadTable() {
-        table.setNumberOfRows(rChildren.count, withRowType: ChildRow.reuseIdentifier)
+        table.setNumberOfRows(state!.children.count, withRowType: ChildRow.reuseIdentifier)
         
-        for (index, posting) in rChildren.enumerated() {
+        for (index, posting) in state!.children.enumerated() {
             let row = table.rowController(at: index) as! ChildRow
             row.subredditLabel.setText("/r/\(posting.subreddit)")
             row.titleLabel.setText(posting.title)

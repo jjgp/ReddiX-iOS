@@ -49,18 +49,12 @@ public func fetchChildren(replacement: Bool = false) -> Store<AppState>.ActionCr
         
         var parameters: Parameters = ["count": "25"]
         if !replacement,
-            let after = state
-                .children
-                .children
-                .last?
-                .after {
+            let after = state.children.after {
             parameters["after"] = after
         }
         
         var URLPath: String = "/.json"
-        if let subreddit = state
-            .children
-            .subreddit {
+        if let subreddit = state.children.subreddit {
             URLPath = "/r/\(subreddit)/\(URLPath)"
         }
         
