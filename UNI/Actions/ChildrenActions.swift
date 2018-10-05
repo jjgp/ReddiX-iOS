@@ -43,22 +43,13 @@ extension ChildrenActions: Equatable {
     
 }
 
-public struct FetchChildren: AsyncAction {
-    
-    let replacement: Bool
-    
-    public init(replacement: Bool = false) {
-        self.replacement = replacement
-    }
-    
-    func run(dispatch: @escaping DispatchFunction, getState: @escaping () -> AppState?) {
-        dispatch(ChildrenActions.isFetching(true))
-        
-        let state = getState()
+public func fetchChildren(replacement: Bool = false) -> Store<AppState>.ActionCreator {
+    return { state, store in
+        store.dispatch(ChildrenActions.isFetching(true))
         
         var parameters: Parameters = ["count": "25"]
         if !replacement,
-            let after = state?
+            let after = state
                 .children
                 .children
                 .last?
@@ -67,7 +58,7 @@ public struct FetchChildren: AsyncAction {
         }
         
         var URLPath: String = "/.json"
-        if let subreddit = state?
+        if let subreddit = state
             .children
             .subreddit {
             URLPath = "/r/\(subreddit)/\(URLPath)"
@@ -76,15 +67,16 @@ public struct FetchChildren: AsyncAction {
         let request = Request<Children>(parameters: parameters, URLPath: URLPath)
         RAPI().process(request) { children, response, error in
             if let children = children {
-                let action = self.replacement ?
+                let action = replacement ?
                     ChildrenActions.replaceChildren(children) :
                     ChildrenActions.appendChildren(children)
-                dispatch(action)
+                store.dispatch(action)
             } else {
-                dispatch(ChildrenActions.isErrored(true))
+                store.dispatch(ChildrenActions.isErrored(true))
             }
-            dispatch(ChildrenActions.isFetching(false))
+            store.dispatch(ChildrenActions.isFetching(false))
         }
+        
+        return nil
     }
-    
 }

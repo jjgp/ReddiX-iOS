@@ -46,7 +46,7 @@ extension ChildrenViewController {
         recognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(recognizer)
         
-        store.dispatch(FetchChildren())
+        store.dispatch(fetchChildren())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,7 +69,7 @@ extension ChildrenViewController {
     
     @objc func refreshChildren() {
         isRefreshing = true
-        store.dispatch(FetchChildren(replacement: true))
+        store.dispatch(fetchChildren(replacement: true))
     }
     
     @objc func tapped() {
@@ -130,7 +130,7 @@ extension ChildrenViewController: UISearchBarDelegate {
     func fetch(subreddit: String? = nil) {
         store.dispatch(ChildrenActions.clearChildren)
         store.dispatch(ChildrenActions.setSubreddit(subreddit))
-        store.dispatch(FetchChildren(replacement: true))
+        store.dispatch(fetchChildren(replacement: true))
     }
     
 }
@@ -175,7 +175,7 @@ extension ChildrenViewController: UITableViewDelegate {
         // NOTE: https://stackoverflow.com/a/31454471
         let offset = scrollView.contentOffset.y + scrollView.frame.size.height
         if (offset >= scrollView.contentSize.height) {
-            store.dispatch(FetchChildren())
+            store.dispatch(fetchChildren())
         }
     }
     

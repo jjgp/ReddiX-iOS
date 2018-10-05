@@ -55,7 +55,6 @@
 		B754381B2163049C00F85B66 /* UNI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B75438132163049C00F85B66 /* UNI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B754381F216304ED00F85B66 /* UNI.h in Headers */ = {isa = PBXBuildFile; fileRef = B732BE64216169930020CD7F /* UNI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B75438202163050000F85B66 /* ChildrenActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732BE8C21616E820020CD7F /* ChildrenActions.swift */; };
-		B75438212163050000F85B66 /* AsyncMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD1D22216182430066BCB2 /* AsyncMiddleware.swift */; };
 		B75438222163050000F85B66 /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */; };
 		B75438232163050000F85B66 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732BE91216171B60020CD7F /* AppReducer.swift */; };
 		B75438242163050000F85B66 /* ChildrenReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732BE8A21616E0E0020CD7F /* ChildrenReducer.swift */; };
@@ -68,7 +67,8 @@
 		B754382D2163063000F85B66 /* UNI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75438132163049C00F85B66 /* UNI.framework */; };
 		B754382E2163064600F85B66 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B754382A216305BE00F85B66 /* ReSwift.framework */; };
 		B754383121630A2D00F85B66 /* PostingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B754383021630A2D00F85B66 /* PostingRow.swift */; };
-		B7FD1D23216182430066BCB2 /* AsyncMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD1D22216182430066BCB2 /* AsyncMiddleware.swift */; };
+		B7ADC0512167AFD00090E3D2 /* MockStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADC0502167AFD00090E3D2 /* MockStore.swift */; };
+		B7ADC0532167BCCB0090E3D2 /* AppState+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADC0522167BCCB0090E3D2 /* AppState+Extensions.swift */; };
 		B7FD1D282161C1DA0066BCB2 /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */; };
 		B7FD1D292161C3B20066BCB2 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE8021616B550020CD7F /* ReSwift.framework */; };
 		C647B68D2163B3B70006C65A /* OHHTTPStubs.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C647B68C2163B3B70006C65A /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -77,7 +77,7 @@
 		C647B6922163B47F0006C65A /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C647B68C2163B3B70006C65A /* OHHTTPStubs.framework */; };
 		C647B6942163BBBB0006C65A /* ChildrenOHHTTPStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C647B6932163BBBB0006C65A /* ChildrenOHHTTPStubs.swift */; };
 		C647B6952163BBC20006C65A /* ChildrenOHHTTPStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C647B6932163BBBB0006C65A /* ChildrenOHHTTPStubs.swift */; };
-		C647B6972163DFF90006C65A /* ExpectAsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C647B6962163DFF90006C65A /* ExpectAsyncAction.swift */; };
+		C647B6972163DFF90006C65A /* ExpectActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C647B6962163DFF90006C65A /* ExpectActionCreator.swift */; };
 		C647B6992163F3EE0006C65A /* JSON+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C647B6982163F3EE0006C65A /* JSON+Extensions.swift */; };
 		C647B69C2163F4000006C65A /* JSON+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C647B6982163F3EE0006C65A /* JSON+Extensions.swift */; };
 		C647B69E2163F4940006C65A /* BundleForClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C647B69D2163F4940006C65A /* BundleForClass.swift */; };
@@ -286,12 +286,13 @@
 		B75438132163049C00F85B66 /* UNI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UNI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B754382A216305BE00F85B66 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/watchOS/ReSwift.framework; sourceTree = "<group>"; };
 		B754383021630A2D00F85B66 /* PostingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingRow.swift; sourceTree = "<group>"; };
-		B7FD1D22216182430066BCB2 /* AsyncMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncMiddleware.swift; sourceTree = "<group>"; };
+		B7ADC0502167AFD00090E3D2 /* MockStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStore.swift; sourceTree = "<group>"; };
+		B7ADC0522167BCCB0090E3D2 /* AppState+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+Extensions.swift"; sourceTree = "<group>"; };
 		B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingMiddleware.swift; sourceTree = "<group>"; };
 		C647B68C2163B3B70006C65A /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OHHTTPStubs.framework; sourceTree = "<group>"; };
 		C647B6902163B41F0006C65A /* ChildrenActionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenActionsTests.swift; sourceTree = "<group>"; };
 		C647B6932163BBBB0006C65A /* ChildrenOHHTTPStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenOHHTTPStubs.swift; sourceTree = "<group>"; };
-		C647B6962163DFF90006C65A /* ExpectAsyncAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectAsyncAction.swift; sourceTree = "<group>"; };
+		C647B6962163DFF90006C65A /* ExpectActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectActionCreator.swift; sourceTree = "<group>"; };
 		C647B6982163F3EE0006C65A /* JSON+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+Extensions.swift"; sourceTree = "<group>"; };
 		C647B69D2163F4940006C65A /* BundleForClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleForClass.swift; sourceTree = "<group>"; };
 		C6E1984E2162C479007E43B5 /* PostingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingTableViewCell.swift; sourceTree = "<group>"; };
@@ -505,8 +506,10 @@
 			isa = PBXGroup;
 			children = (
 				C647B68F2163B3FA0006C65A /* Actions */,
-				C647B6962163DFF90006C65A /* ExpectAsyncAction.swift */,
+				B7ADC0522167BCCB0090E3D2 /* AppState+Extensions.swift */,
+				C647B6962163DFF90006C65A /* ExpectActionCreator.swift */,
 				B732BE73216169930020CD7F /* Info.plist */,
+				B7ADC0502167AFD00090E3D2 /* MockStore.swift */,
 			);
 			path = UNITests;
 			sourceTree = "<group>";
@@ -540,7 +543,6 @@
 		B732BE8E21616E860020CD7F /* Middleware */ = {
 			isa = PBXGroup;
 			children = (
-				B7FD1D22216182430066BCB2 /* AsyncMiddleware.swift */,
 				B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */,
 			);
 			path = Middleware;
@@ -1106,7 +1108,6 @@
 				B732BE90216170980020CD7F /* Store.swift in Sources */,
 				B732BE8821616CCC0020CD7F /* ChildrenState.swift in Sources */,
 				B732BE8B21616E0E0020CD7F /* ChildrenReducer.swift in Sources */,
-				B7FD1D23216182430066BCB2 /* AsyncMiddleware.swift in Sources */,
 				B732BE8D21616E820020CD7F /* ChildrenActions.swift in Sources */,
 				B732BE8621616BBB0020CD7F /* AppState.swift in Sources */,
 				B7FD1D282161C1DA0066BCB2 /* LoggingMiddleware.swift in Sources */,
@@ -1119,9 +1120,11 @@
 			files = (
 				C647B6912163B41F0006C65A /* ChildrenActionsTests.swift in Sources */,
 				C647B6992163F3EE0006C65A /* JSON+Extensions.swift in Sources */,
-				C647B6972163DFF90006C65A /* ExpectAsyncAction.swift in Sources */,
+				C647B6972163DFF90006C65A /* ExpectActionCreator.swift in Sources */,
+				B7ADC0532167BCCB0090E3D2 /* AppState+Extensions.swift in Sources */,
 				C647B69F2163F4940006C65A /* BundleForClass.swift in Sources */,
 				C647B6942163BBBB0006C65A /* ChildrenOHHTTPStubs.swift in Sources */,
+				B7ADC0512167AFD00090E3D2 /* MockStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1152,7 +1155,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B75438202163050000F85B66 /* ChildrenActions.swift in Sources */,
-				B75438212163050000F85B66 /* AsyncMiddleware.swift in Sources */,
 				B75438222163050000F85B66 /* LoggingMiddleware.swift in Sources */,
 				B75438232163050000F85B66 /* AppReducer.swift in Sources */,
 				B75438242163050000F85B66 /* ChildrenReducer.swift in Sources */,

@@ -21,7 +21,7 @@ class InterfaceController: WKInterfaceController, StoreSubscriber {
 
     @IBAction func refresh() {
         store.dispatch(ChildrenActions.clearChildren)
-        store.dispatch(FetchChildren())
+        store.dispatch(fetchChildren())
     }
 }
 
@@ -32,7 +32,7 @@ extension InterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        store.dispatch(FetchChildren())
+        store.dispatch(fetchChildren())
     }
     
     override func willActivate() {
