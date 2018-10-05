@@ -7,9 +7,11 @@
 //
 
 import ReSwift
+import ReSwiftRouter
 
 public func appReducer(action: Action, state: AppState?) -> AppState {
     return AppState(
-        children: childrenReducer(action: action, state: state?.children)
+        children: childrenReducer(action: action, state: state?.children),
+        navigation: NavigationReducer.handleAction(action, state: state?.navigation)
     )
 }

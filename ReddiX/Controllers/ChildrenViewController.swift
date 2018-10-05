@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ChildrenViewController.swift
 //  ReddiX
 //
 //  Created by Jason Prasad on 9/29/18.
@@ -8,6 +8,7 @@
 
 import RAPI
 import ReSwift
+import ReSwiftRouter
 import SafariServices
 import UIKit
 import UNI

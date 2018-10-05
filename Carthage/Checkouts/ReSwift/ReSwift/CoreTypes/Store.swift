@@ -6,6 +6,8 @@
 //  Copyright © 2015 DigiTales. All rights reserved.
 //
 
+import Foundation
+
 /**
  This class is the default implementation of the `Store` protocol. You will use this store in most
  of your applications. You shouldn't need to implement your own store.
@@ -23,12 +25,9 @@ open class Store<State: StateType>: StoreType {
 
     /*private (set)*/ public var state: State! {
         didSet {
+            subscriptions = subscriptions.filter { $0.subscriber != nil }
             subscriptions.forEach {
-                if $0.subscriber == nil {
-                    subscriptions.remove($0)
-                } else {
-                    $0.newValues(oldState: oldValue, newState: state)
-                }
+                $0.newValues(oldState: oldValue, newState: state)
             }
         }
     }
@@ -37,48 +36,29 @@ open class Store<State: StateType>: StoreType {
 
     private var reducer: Reducer<State>
 
-    var subscriptions: Set<SubscriptionType> = []
+    var subscriptions: [SubscriptionType] = []
 
     private var isDispatching = false
 
-    /// Indicates if new subscriptions attempt to apply `skipRepeats` 
-    /// by default.
-    fileprivate let subscriptionsAutomaticallySkipRepeats: Bool
-
-    /// Initializes the store with a reducer, an initial state and a list of middleware.
-    ///
-    /// Middleware is applied in the order in which it is passed into this constructor.
-    ///
-    /// - parameter reducer: Main reducer that processes incoming actions.
-    /// - parameter state: Initial state, if any. Can be `nil` and will be 
-    ///   provided by the reducer in that case.
-    /// - parameter middleware: Ordered list of action pre-processors, acting 
-    ///   before the root reducer.
-    /// - parameter automaticallySkipsRepeats: If `true`, the store will attempt 
-    ///   to skip idempotent state updates when a subscriber's state type 
-    ///   implements `Equatable`. Defaults to `true`.
     public required init(
         reducer: @escaping Reducer<State>,
         state: State?,
-        middleware: [Middleware<State>] = [],
-        automaticallySkipsRepeats: Bool = true
+        middleware: [Middleware<State>] = []
     ) {
-        self.subscriptionsAutomaticallySkipRepeats = automaticallySkipsRepeats
         self.reducer = reducer
 
         // Wrap the dispatch function with all middlewares
         self.dispatchFunction = middleware
             .reversed()
-            .reduce(
-                { [unowned self] action in
-                    self._defaultDispatch(action: action) },
-                { dispatchFunction, middleware in
-                    // If the store get's deinitialized before the middleware is complete; drop
-                    // the action without dispatching.
-                    let dispatch: (Action) -> Void = { [weak self] in self?.dispatch($0) }
-                    let getState = { [weak self] in self?.state }
-                    return middleware(dispatch, getState)(dispatchFunction)
-            })
+            .reduce({ [unowned self] action in
+                return self._defaultDispatch(action: action)
+            }) { dispatchFunction, middleware in
+                // If the store get's deinitialized before the middleware is complete; drop
+                // the action without dispatching.
+                let dispatch: (Action) -> Void = { [weak self] in self?.dispatch($0) }
+                let getState = { [weak self] in self?.state }
+                return middleware(dispatch, getState)(dispatchFunction)
+        }
 
         if let state = state {
             self.state = state
@@ -92,13 +72,19 @@ open class Store<State: StateType>: StoreType {
         transformedSubscription: Subscription<SelectedState>?)
         where S.StoreSubscriberStateType == SelectedState
     {
+        // If the same subscriber is already registered with the store, replace the existing
+        // subscription with the new one.
+        if let index = subscriptions.index(where: { $0.subscriber === subscriber }) {
+            subscriptions.remove(at: index)
+        }
+
         let subscriptionBox = self.subscriptionBox(
             originalSubscription: originalSubscription,
             transformedSubscription: transformedSubscription,
             subscriber: subscriber
         )
 
-        subscriptions.update(with: subscriptionBox)
+        subscriptions.append(subscriptionBox)
 
         if let state = self.state {
             originalSubscription.newValues(oldState: nil, newState: state)
@@ -203,10 +189,6 @@ open class Store<State: StateType>: StoreType {
 extension Store where State: Equatable {
     open func subscribe<S: StoreSubscriber>(_ subscriber: S)
         where S.StoreSubscriberStateType == State {
-            guard subscriptionsAutomaticallySkipRepeats else {
-                _ = subscribe(subscriber, transform: nil)
-                return
-            }
             _ = subscribe(subscriber, transform: { $0.skipRepeats() })
     }
 
@@ -217,10 +199,10 @@ extension Store where State: Equatable {
         let originalSubscription = Subscription<State>()
 
         var transformedSubscription = transform?(originalSubscription)
-        if subscriptionsAutomaticallySkipRepeats {
-            transformedSubscription = transformedSubscription?.skipRepeats()
-        }
-        _subscribe(subscriber, originalSubscription: originalSubscription,
+        transformedSubscription = transformedSubscription?.skipRepeats()
+
+        _subscribe(subscriber,
+                   originalSubscription: originalSubscription,
                    transformedSubscription: transformedSubscription)
     }
 }

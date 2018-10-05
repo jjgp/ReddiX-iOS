@@ -58,7 +58,7 @@ class ChildrenActionsTests: XCTestCase {
             .dispatches(ChildrenActions.isFetching(true))
             .dispatches(ChildrenActions.isErrored(true))
             .dispatches(ChildrenActions.isFetching(false))
-            .run(with: AppState(children: ChildrenState()))
+            .run(with: AppState())
 
         wait(for: [expect], timeout: 1.0)
     }

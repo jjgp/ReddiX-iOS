@@ -8,7 +8,7 @@
 
 import RAPI
 import ReSwift
-import SafariServices
+import ReSwiftRouter
 import UIKit
 import UNI
 
@@ -35,7 +35,7 @@ extension ChildrenTableView {
                                       action: #selector(refreshChildren),
                                       for: .valueChanged)
             
-            store.subscribe(self) { $0.select { $0.children }.skip(when: ==) }
+            store.subscribe(self) { $0.select { $0.children }.skipRepeats() }
         } else {
             store.unsubscribe(self)
         }
@@ -121,14 +121,13 @@ extension ChildrenTableView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        guard let _ = URL(string: state!.children[indexPath.section].url) else {
+        defer { tableView.deselectRow(at: indexPath, animated: true) }
+        guard let url = URL(string: state!.children[indexPath.section].url) else {
             return
         }
         
-        // TODO: Router?
-//        self.present(SFSafariViewController(url: url), animated: true)
+        store.dispatch(SetRouteSpecificData(route: [.childViewController], data: url))
+        store.dispatch(SetRouteAction([.childViewController]))
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

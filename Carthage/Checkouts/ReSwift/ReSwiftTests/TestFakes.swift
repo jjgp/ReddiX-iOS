@@ -63,9 +63,7 @@ struct TestCustomAppState: StateType {
     }
 }
 
-struct NoOpAction: Action {}
-
-struct SetValueAction: Action {
+struct SetValueAction: StandardActionConvertible {
 
     let value: Int?
     static let type = "SetValueAction"
@@ -73,9 +71,19 @@ struct SetValueAction: Action {
     init (_ value: Int?) {
         self.value = value
     }
+
+    init(_ standardAction: StandardAction) {
+        self.value = standardAction.payload!["value"] as! Int?
+    }
+
+    func toStandardAction() -> StandardAction {
+        return StandardAction(type: SetValueAction.type, payload: ["value": value as AnyObject],
+                                isTypedAction: true)
+    }
+
 }
 
-struct SetValueStringAction: Action {
+struct SetValueStringAction: StandardActionConvertible {
 
     var value: String
     static let type = "SetValueStringAction"
@@ -83,15 +91,36 @@ struct SetValueStringAction: Action {
     init (_ value: String) {
         self.value = value
     }
+
+    init(_ standardAction: StandardAction) {
+        self.value = standardAction.payload!["value"] as! String
+    }
+
+    func toStandardAction() -> StandardAction {
+        return StandardAction(type: SetValueStringAction.type,
+                              payload: ["value": value as AnyObject],
+                              isTypedAction: true)
+    }
+
 }
 
-struct SetCustomSubstateAction: Action {
+struct SetCustomSubstateAction: StandardActionConvertible {
 
     var value: Int
     static let type = "SetCustomSubstateAction"
 
     init (_ value: Int) {
         self.value = value
+    }
+
+    init(_ standardAction: StandardAction) {
+        self.value = standardAction.payload!["value"] as! Int
+    }
+
+    func toStandardAction() -> StandardAction {
+        return StandardAction(type: SetValueStringAction.type,
+                              payload: ["value": value as AnyObject],
+                              isTypedAction: true)
     }
 }
 
@@ -166,19 +195,6 @@ class TestStoreSubscriber<T>: StoreSubscriber {
 
     func newState(state: T) {
         receivedStates.append(state)
-    }
-}
-
-class BlockSubscriber<S>: StoreSubscriber {
-    typealias StoreSubscriberStateType = S
-    private let block: (S) -> Void
-
-    init(block: @escaping (S) -> Void) {
-        self.block = block
-    }
-
-    func newState(state: S) {
-        self.block(state)
     }
 }
 

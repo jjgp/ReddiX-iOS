@@ -1,2 +1,3 @@
 github "AliSoftware/OHHTTPStubs" "6.1.0"
-github "ReSwift/ReSwift" "10e1465bac842668406f08d73e428b92051432ce"
+github "ReSwift/ReSwift" "4.0.1"
+github "jjgp/ReSwift-Router" "b8224846846a4a32d8e50b1b985dde3315af6550"
