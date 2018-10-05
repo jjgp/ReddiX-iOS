@@ -26,7 +26,7 @@ public struct Children: JSON {
     
     public let after: String?
     public let before: String?
-    public let children: [Posting]
+    public let children: [Child]
     
 }
 
@@ -37,7 +37,7 @@ extension Children {
         let container = try listingContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
         after = try container.decodeIfPresent(String.self, forKey: .after)
         before = try container.decodeIfPresent(String.self, forKey: .before)
-        children = try container.decode([Posting].self, forKey: .children)
+        children = try container.decode([Child].self, forKey: .children)
     }
     
 }

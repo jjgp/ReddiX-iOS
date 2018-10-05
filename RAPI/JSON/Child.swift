@@ -1,5 +1,5 @@
 //
-//  Posting.swift
+//  Child.swift
 //  RAPI
 //
 //  Created by Jason Prasad on 9/30/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Posting: Decodable {
+public struct Child: Decodable {
     
     enum CodingKeys: String, CodingKey {
         
@@ -32,7 +32,7 @@ public struct Posting: Decodable {
     
 }
 
-extension Posting {
+extension Child {
     
     public init(from decoder: Decoder) throws {
         let t3Container = try decoder.container(keyedBy: T3CodingKeys.self)
@@ -45,9 +45,9 @@ extension Posting {
     
 }
 
-extension Posting: Equatable {
+extension Child: Equatable {
     
-    public static func ==(lhs: Posting, rhs: Posting) -> Bool {
+    public static func ==(lhs: Child, rhs: Child) -> Bool {
         return lhs.id == rhs.id &&
             lhs.subreddit == rhs.subreddit &&
             lhs.title == rhs.title &&

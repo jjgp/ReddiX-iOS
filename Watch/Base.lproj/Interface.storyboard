@@ -20,7 +20,7 @@
                         </button>
                         <table alignment="left" id="lgP-Z3-7S5">
                             <items>
-                                <tableRow identifier="PostingRow" selectable="NO" id="DWY-QU-qtf" customClass="PostingRow" customModule="Watch_Extension">
+                                <tableRow identifier="ChildRow" selectable="NO" id="DWY-QU-qtf" customClass="ChildRow" customModule="Watch_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="5" id="EfQ-aa-BKe">
                                         <items>
                                             <label alignment="left" text="Subreddit" id="JlS-dx-3UU" userLabel="Subreddit">
