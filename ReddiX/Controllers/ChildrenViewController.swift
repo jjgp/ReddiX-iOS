@@ -18,7 +18,7 @@ class ChildrenViewController: UIViewController, StoreSubscriber {
     
     var isRefreshing = false
     var isFetching = false
-    var postings: [Posting] = []
+    var rChildren: [Child] = []
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
@@ -94,10 +94,10 @@ extension ChildrenViewController {
             }
         }
         
-        if postings != newPostings {
-            postings = newPostings
+        if rChildren != newPostings {
+            rChildren = newPostings
             DispatchQueue.main.async {
-                if self.postings.count > 0 {
+                if self.children.count > 0 {
                     self.tableView.isHidden = false
                     self.tableView.reloadData()
                 } else {
@@ -140,7 +140,7 @@ extension ChildrenViewController: UISearchBarDelegate {
 extension ChildrenViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return postings.count
+        return children.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -152,8 +152,8 @@ extension ChildrenViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Posting", for: indexPath) as! PostingTableViewCell
-        cell.update(with: postings[indexPath.section])
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChildTableViewCell.reuseIdentifier, for: indexPath) as! ChildTableViewCell
+        cell.update(with: rChildren[indexPath.section])
         return cell
     }
     
@@ -182,7 +182,7 @@ extension ChildrenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        guard let url = URL(string: postings[indexPath.section].url) else {
+        guard let url = URL(string: rChildren[indexPath.section].url) else {
             return
         }
         

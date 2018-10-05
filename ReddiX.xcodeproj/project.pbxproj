@@ -25,7 +25,7 @@
 		B717263C216114A100585459 /* RAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726222160FBE800585459 /* RAPITests.swift */; };
 		B717263D21611C3600585459 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71726362161122F00585459 /* OHHTTPStubs.framework */; };
 		B717264F21611E9600585459 /* OHHTTPStubs.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B717264E21611E9600585459 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B71726512161241800585459 /* Posting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726502161241800585459 /* Posting.swift */; };
+		B71726512161241800585459 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726502161241800585459 /* Child.swift */; };
 		B732BE6B216169930020CD7F /* UNI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE62216169930020CD7F /* UNI.framework */; };
 		B732BE74216169930020CD7F /* UNI.h in Headers */ = {isa = PBXBuildFile; fileRef = B732BE64216169930020CD7F /* UNI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B732BE77216169930020CD7F /* UNI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE62216169930020CD7F /* UNI.framework */; };
@@ -48,7 +48,7 @@
 		B7543803216303F600F85B66 /* RAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B75437FB216303F600F85B66 /* RAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B75438082163040B00F85B66 /* Children.swift in Sources */ = {isa = PBXBuildFile; fileRef = B717263A2161139200585459 /* Children.swift */; };
 		B75438092163040B00F85B66 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726042160159400585459 /* JSON.swift */; };
-		B754380A2163040B00F85B66 /* Posting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726502161241800585459 /* Posting.swift */; };
+		B754380A2163040B00F85B66 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726502161241800585459 /* Child.swift */; };
 		B754380B2163040B00F85B66 /* RAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726002160136100585459 /* RAPI.swift */; };
 		B754380C2163040B00F85B66 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7172602216014A000585459 /* Request.swift */; };
 		B754380D2163045100F85B66 /* RAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = B71726152160FBE700585459 /* RAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -66,7 +66,7 @@
 		B754382C2163063000F85B66 /* RAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75437FB216303F600F85B66 /* RAPI.framework */; };
 		B754382D2163063000F85B66 /* UNI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75438132163049C00F85B66 /* UNI.framework */; };
 		B754382E2163064600F85B66 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B754382A216305BE00F85B66 /* ReSwift.framework */; };
-		B754383121630A2D00F85B66 /* PostingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B754383021630A2D00F85B66 /* PostingRow.swift */; };
+		B754383121630A2D00F85B66 /* ChildRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B754383021630A2D00F85B66 /* ChildRow.swift */; };
 		B7ADC0512167AFD00090E3D2 /* MockStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADC0502167AFD00090E3D2 /* MockStore.swift */; };
 		B7ADC0532167BCCB0090E3D2 /* AppState+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADC0522167BCCB0090E3D2 /* AppState+Extensions.swift */; };
 		B7FD1D282161C1DA0066BCB2 /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */; };
@@ -82,7 +82,7 @@
 		C647B69C2163F4000006C65A /* JSON+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C647B6982163F3EE0006C65A /* JSON+Extensions.swift */; };
 		C647B69E2163F4940006C65A /* BundleForClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C647B69D2163F4940006C65A /* BundleForClass.swift */; };
 		C647B69F2163F4940006C65A /* BundleForClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C647B69D2163F4940006C65A /* BundleForClass.swift */; };
-		C6E1984F2162C479007E43B5 /* PostingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E1984E2162C479007E43B5 /* PostingTableViewCell.swift */; };
+		C6E1984F2162C479007E43B5 /* ChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E1984E2162C479007E43B5 /* ChildTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,7 +260,7 @@
 		B71726382161124F00585459 /* Reddit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Reddit.json; sourceTree = "<group>"; };
 		B717263A2161139200585459 /* Children.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Children.swift; sourceTree = "<group>"; };
 		B717264E21611E9600585459 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OHHTTPStubs.framework; sourceTree = "<group>"; };
-		B71726502161241800585459 /* Posting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posting.swift; sourceTree = "<group>"; };
+		B71726502161241800585459 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		B732BE62216169930020CD7F /* UNI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UNI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B732BE64216169930020CD7F /* UNI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNI.h; sourceTree = "<group>"; };
 		B732BE65216169930020CD7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 		B75437FB216303F600F85B66 /* RAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75438132163049C00F85B66 /* UNI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UNI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B754382A216305BE00F85B66 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/watchOS/ReSwift.framework; sourceTree = "<group>"; };
-		B754383021630A2D00F85B66 /* PostingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingRow.swift; sourceTree = "<group>"; };
+		B754383021630A2D00F85B66 /* ChildRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRow.swift; sourceTree = "<group>"; };
 		B7ADC0502167AFD00090E3D2 /* MockStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStore.swift; sourceTree = "<group>"; };
 		B7ADC0522167BCCB0090E3D2 /* AppState+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+Extensions.swift"; sourceTree = "<group>"; };
 		B7FD1D272161C1DA0066BCB2 /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingMiddleware.swift; sourceTree = "<group>"; };
@@ -295,7 +295,7 @@
 		C647B6962163DFF90006C65A /* ExpectActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectActionCreator.swift; sourceTree = "<group>"; };
 		C647B6982163F3EE0006C65A /* JSON+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+Extensions.swift"; sourceTree = "<group>"; };
 		C647B69D2163F4940006C65A /* BundleForClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleForClass.swift; sourceTree = "<group>"; };
-		C6E1984E2162C479007E43B5 /* PostingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingTableViewCell.swift; sourceTree = "<group>"; };
+		C6E1984E2162C479007E43B5 /* ChildTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,13 +417,13 @@
 		B71725DE2160105000585459 /* ReddiX */ = {
 			isa = PBXGroup;
 			children = (
+				B7DB9EB62167DE7000C447DE /* Controllers */,
+				B7DB9EB52167DE6500C447DE /* Views */,
 				B71725DF2160105000585459 /* AppDelegate.swift */,
 				B71725E62160105100585459 /* Assets.xcassets */,
-				B71725E12160105000585459 /* ChildrenViewController.swift */,
 				B71725EB2160105100585459 /* Info.plist */,
 				B71725E82160105100585459 /* LaunchScreen.storyboard */,
 				B71725E32160105000585459 /* Main.storyboard */,
-				C6E1984E2162C479007E43B5 /* PostingTableViewCell.swift */,
 			);
 			path = ReddiX;
 			sourceTree = "<group>";
@@ -442,7 +442,7 @@
 			children = (
 				B717263A2161139200585459 /* Children.swift */,
 				B71726042160159400585459 /* JSON.swift */,
-				B71726502161241800585459 /* Posting.swift */,
+				B71726502161241800585459 /* Child.swift */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -565,9 +565,25 @@
 				B75437E42163039300F85B66 /* ExtensionDelegate.swift */,
 				B75437E82163039300F85B66 /* Info.plist */,
 				B75437E22163039300F85B66 /* InterfaceController.swift */,
-				B754383021630A2D00F85B66 /* PostingRow.swift */,
+				B754383021630A2D00F85B66 /* ChildRow.swift */,
 			);
 			path = "Watch Extension";
+			sourceTree = "<group>";
+		};
+		B7DB9EB52167DE6500C447DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C6E1984E2162C479007E43B5 /* ChildTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B7DB9EB62167DE7000C447DE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B71725E12160105000585459 /* ChildrenViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		C647B68A2163B30F0006C65A /* CommonTests */ = {
@@ -1063,7 +1079,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6E1984F2162C479007E43B5 /* PostingTableViewCell.swift in Sources */,
+				C6E1984F2162C479007E43B5 /* ChildTableViewCell.swift in Sources */,
 				B71725E22160105000585459 /* ChildrenViewController.swift in Sources */,
 				B71725E02160105000585459 /* AppDelegate.swift in Sources */,
 			);
@@ -1085,7 +1101,7 @@
 				B71726322160FCFF00585459 /* Request.swift in Sources */,
 				B717263B2161139200585459 /* Children.swift in Sources */,
 				B71726342160FD0700585459 /* JSON.swift in Sources */,
-				B71726512161241800585459 /* Posting.swift in Sources */,
+				B71726512161241800585459 /* Child.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1132,7 +1148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B754383121630A2D00F85B66 /* PostingRow.swift in Sources */,
+				B754383121630A2D00F85B66 /* ChildRow.swift in Sources */,
 				B75437E52163039300F85B66 /* ExtensionDelegate.swift in Sources */,
 				B75437E32163039300F85B66 /* InterfaceController.swift in Sources */,
 			);
@@ -1144,7 +1160,7 @@
 			files = (
 				B75438082163040B00F85B66 /* Children.swift in Sources */,
 				B75438092163040B00F85B66 /* JSON.swift in Sources */,
-				B754380A2163040B00F85B66 /* Posting.swift in Sources */,
+				B754380A2163040B00F85B66 /* Child.swift in Sources */,
 				B754380B2163040B00F85B66 /* RAPI.swift in Sources */,
 				B754380C2163040B00F85B66 /* Request.swift in Sources */,
 			);
