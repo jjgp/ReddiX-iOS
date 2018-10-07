@@ -10,6 +10,7 @@ import ReSwiftRouter
 
 extension RouteElementIdentifier {
     
-    static let childViewController = "ChildViewController"
+    static let childViewController = "\(ChildViewController.self)"
+    static let childrenViewController = "\(ChildrenViewController.self)"
     
 }

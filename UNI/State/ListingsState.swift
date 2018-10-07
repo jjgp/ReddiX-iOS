@@ -1,5 +1,5 @@
 //
-//  ChildrenState.swift
+//  ListingsState.swift
 //  UNI
 //
 //  Created by Jason Prasad on 9/30/18.
@@ -9,7 +9,7 @@
 import RAPI
 import ReSwift
 
-public struct ChildrenState: StateType {
+public struct ListingsState: StateType {
     
     public var after: String?
     public var children = [Child]()
@@ -21,9 +21,9 @@ public struct ChildrenState: StateType {
     
 }
 
-extension ChildrenState: Equatable {
+extension ListingsState: Equatable {
     
-    public static func ==(lhs: ChildrenState, rhs: ChildrenState) -> Bool {
+    public static func ==(lhs: ListingsState, rhs: ListingsState) -> Bool {
         return lhs.after == rhs.after &&
             lhs.children == rhs.children &&
             lhs.isErrored == rhs.isErrored &&

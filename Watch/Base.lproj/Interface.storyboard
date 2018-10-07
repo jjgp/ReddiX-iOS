@@ -13,11 +13,6 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="left" title="Refresh" id="2ha-h4-vL8">
-                            <connections>
-                                <action selector="refresh" destination="AgC-eL-Hgc" id="paS-o9-y8R"/>
-                            </connections>
-                        </button>
                         <table alignment="left" id="lgP-Z3-7S5">
                             <items>
                                 <tableRow identifier="ChildRow" selectable="NO" id="DWY-QU-qtf" customClass="ChildRow" customModule="Watch_Extension">
