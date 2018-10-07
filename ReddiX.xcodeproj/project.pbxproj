@@ -27,6 +27,8 @@
 		B717264F21611E9600585459 /* OHHTTPStubs.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B717264E21611E9600585459 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B71726512161241800585459 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71726502161241800585459 /* Child.swift */; };
 		B727D3BC2168034600CF39E6 /* ChildrenSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B727D3BB2168034600CF39E6 /* ChildrenSearchBar.swift */; };
+		B72CA6EF2169796600D96C23 /* RootRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72CA6EE2169796600D96C23 /* RootRoutable.swift */; };
+		B72CA6F12169797200D96C23 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72CA6F02169797200D96C23 /* Routes.swift */; };
 		B732BE6B216169930020CD7F /* UNI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE62216169930020CD7F /* UNI.framework */; };
 		B732BE74216169930020CD7F /* UNI.h in Headers */ = {isa = PBXBuildFile; fileRef = B732BE64216169930020CD7F /* UNI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B732BE77216169930020CD7F /* UNI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732BE62216169930020CD7F /* UNI.framework */; };
@@ -39,6 +41,8 @@
 		B732BE8D21616E820020CD7F /* ChildrenActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732BE8C21616E820020CD7F /* ChildrenActions.swift */; };
 		B732BE90216170980020CD7F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732BE8F216170980020CD7F /* Store.swift */; };
 		B732BE92216171B60020CD7F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732BE91216171B60020CD7F /* AppReducer.swift */; };
+		B75209D72168449300655921 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75209D62168449300655921 /* ChildViewController.swift */; };
+		B75209D92168469100655921 /* ReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75209D82168469100655921 /* ReSwiftRouter.framework */; };
 		B75437D52163039100F85B66 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B75437D32163039100F85B66 /* Interface.storyboard */; };
 		B75437D72163039300F85B66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B75437D62163039300F85B66 /* Assets.xcassets */; };
 		B75437DE2163039300F85B66 /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B75437DD2163039300F85B66 /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -264,6 +268,8 @@
 		B717264E21611E9600585459 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OHHTTPStubs.framework; sourceTree = "<group>"; };
 		B71726502161241800585459 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		B727D3BB2168034600CF39E6 /* ChildrenSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenSearchBar.swift; sourceTree = "<group>"; };
+		B72CA6EE2169796600D96C23 /* RootRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRoutable.swift; sourceTree = "<group>"; };
+		B72CA6F02169797200D96C23 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		B732BE62216169930020CD7F /* UNI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UNI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B732BE64216169930020CD7F /* UNI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNI.h; sourceTree = "<group>"; };
 		B732BE65216169930020CD7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -276,6 +282,8 @@
 		B732BE8C21616E820020CD7F /* ChildrenActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenActions.swift; sourceTree = "<group>"; };
 		B732BE8F216170980020CD7F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		B732BE91216171B60020CD7F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		B75209D62168449300655921 /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		B75209D82168469100655921 /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = Carthage/Build/iOS/ReSwiftRouter.framework; sourceTree = "<group>"; };
 		B75437D12163039100F85B66 /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75437D42163039100F85B66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		B75437D62163039300F85B66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -307,6 +315,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B75209D92168469100655921 /* ReSwiftRouter.framework in Frameworks */,
 				B71726282160FBE800585459 /* RAPI.framework in Frameworks */,
 				B7FD1D292161C3B20066BCB2 /* ReSwift.framework in Frameworks */,
 				B732BE77216169930020CD7F /* UNI.framework in Frameworks */,
@@ -421,6 +430,7 @@
 		B71725DE2160105000585459 /* ReddiX */ = {
 			isa = PBXGroup;
 			children = (
+				B72CA6ED2169794F00D96C23 /* Router */,
 				B7DB9EB62167DE7000C447DE /* Controllers */,
 				B7DB9EB52167DE6500C447DE /* Views */,
 				B71725DF2160105000585459 /* AppDelegate.swift */,
@@ -475,6 +485,7 @@
 		B71726352161122E00585459 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B75209D82168469100655921 /* ReSwiftRouter.framework */,
 				B732BE8021616B550020CD7F /* ReSwift.framework */,
 				B754382A216305BE00F85B66 /* ReSwift.framework */,
 				B71726362161122F00585459 /* OHHTTPStubs.framework */,
@@ -491,6 +502,15 @@
 			name = Carthage;
 			path = Carthage/Build/iOS;
 			sourceTree = SOURCE_ROOT;
+		};
+		B72CA6ED2169794F00D96C23 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B72CA6EE2169796600D96C23 /* RootRoutable.swift */,
+				B72CA6F02169797200D96C23 /* Routes.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
 		};
 		B732BE63216169930020CD7F /* UNI */ = {
 			isa = PBXGroup;
@@ -588,6 +608,7 @@
 			isa = PBXGroup;
 			children = (
 				B71725E12160105000585459 /* ChildrenViewController.swift */,
+				B75209D62168449300655921 /* ChildViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1067,12 +1088,14 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReSwiftRouter.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReSwiftRouter.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1086,9 +1109,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6E1984F2162C479007E43B5 /* ChildTableViewCell.swift in Sources */,
+				B72CA6F12169797200D96C23 /* Routes.swift in Sources */,
 				B727D3BC2168034600CF39E6 /* ChildrenSearchBar.swift in Sources */,
+				B72CA6EF2169796600D96C23 /* RootRoutable.swift in Sources */,
 				B71725E22160105000585459 /* ChildrenViewController.swift in Sources */,
 				B7DB9EB82167EE0500C447DE /* ChildrenTableView.swift in Sources */,
+				B75209D72168449300655921 /* ChildViewController.swift in Sources */,
 				B71725E02160105000585459 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

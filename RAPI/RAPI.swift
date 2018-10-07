@@ -35,10 +35,6 @@ public extension RAPI {
     
     @discardableResult
     func process<P: Processable>(_ request: P, completion: Completion<P.Map>? = nil) -> URLSessionDataTask {
-        /*
-         * NOTE: try! in constructing the URLRequest, if we are constructing
-         * incorrect URLs that is a development time error
-         */
         let task = session.dataTask(with: try! request.URLRequest(for: host)) { data, response, error in
             let response = response as? HTTPURLResponse
             var json: P.Map?

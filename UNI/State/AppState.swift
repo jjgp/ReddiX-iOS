@@ -7,13 +7,17 @@
 //
 
 import ReSwift
+import ReSwiftRouter
 
 public struct AppState: StateType {
     
     public var children: ChildrenState
+    public var navigation: NavigationState
     
-    public init(children: ChildrenState) {
+    public init(children: ChildrenState,
+                navigation: NavigationState) {
         self.children = children
+        self.navigation = navigation
     }
     
 }

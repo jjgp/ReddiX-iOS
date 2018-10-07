@@ -6,6 +6,8 @@
 //  Copyright © 2015 DigiTales. All rights reserved.
 //
 
+import Foundation
+
 /**
  Method is only used internally in ReSwift to cast the generic `StateType` to a specific
  type expected by reducers / store subscribers.

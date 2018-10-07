@@ -38,7 +38,7 @@ extension InterfaceController {
     override func willActivate() {
         super.willActivate()
         
-        store.subscribe(self) { $0.select { $0.children }.skip(when: ==) }
+        store.subscribe(self) { $0.select { $0.children }.skipRepeats() }
     }
     
     override func didDeactivate() {

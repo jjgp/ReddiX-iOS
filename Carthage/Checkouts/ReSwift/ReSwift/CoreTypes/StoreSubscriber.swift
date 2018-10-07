@@ -6,6 +6,8 @@
 //  Copyright © 2015 Benjamin Encz. All rights reserved.
 //
 
+import Foundation
+
 public protocol AnyStoreSubscriber: class {
     // swiftlint:disable:next identifier_name
     func _newState(state: Any)

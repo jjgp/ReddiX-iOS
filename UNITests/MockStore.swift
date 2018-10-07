@@ -27,17 +27,14 @@ class MockStore<State: StateType>: Store<State> {
     
     required init(reducer: @escaping Reducer<State>,
                   state: State?,
-                  middleware: [Middleware<State>],
-                  automaticallySkipsRepeats: Bool) {
+                  middleware: [Middleware<State>]) {
         guard proxy != nil else {
             fatalError("use init(state:dispatch proxy:) to instantiate \(MockStore.self)")
         }
         
         super.init(reducer: reducer,
                    state: state,
-                   middleware: middleware,
-                   automaticallySkipsRepeats: automaticallySkipsRepeats)
+                   middleware: middleware)
     }
-
     
 }

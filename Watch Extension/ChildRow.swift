@@ -11,7 +11,7 @@ import WatchKit
 
 class ChildRow: NSObject {
     
-    static var reuseIdentifier = "ChildRow"
+    static let reuseIdentifier = "ChildRow"
     @IBOutlet weak var subredditLabel: WKInterfaceLabel!
     @IBOutlet weak var titleLabel: WKInterfaceLabel!
     

@@ -6,6 +6,8 @@
 //  Copyright © 2016 Benjamin Encz. All rights reserved.
 //
 
+import Foundation
+
 /// A box around subscriptions and subscribers.
 ///
 /// Acts as a type-erasing wrapper around a subscription and its transformed subscription.
@@ -14,15 +16,10 @@
 ///
 /// The box subscribes either to the original subscription, or if available to the transformed
 /// subscription and passes any values that come through this subscriptions to the subscriber.
-class SubscriptionBox<State>: Hashable {
+class SubscriptionBox<State> {
 
     private let originalSubscription: Subscription<State>
     weak var subscriber: AnyStoreSubscriber?
-    private let objectIdentifier: ObjectIdentifier
-
-    var hashValue: Int {
-        return self.objectIdentifier.hashValue
-    }
 
     init<T>(
         originalSubscription: Subscription<State>,
@@ -31,7 +28,6 @@ class SubscriptionBox<State>: Hashable {
     ) {
         self.originalSubscription = originalSubscription
         self.subscriber = subscriber
-        self.objectIdentifier = ObjectIdentifier(subscriber)
 
         // If we received a transformed subscription, we subscribe to that subscription
         // and forward all new values to the subscriber.
@@ -53,10 +49,6 @@ class SubscriptionBox<State>: Hashable {
         // values of type `<State>`. If present, transformed subscriptions will
         // receive this update and transform it before passing it on to the subscriber.
         self.originalSubscription.newValues(oldState: oldState, newState: newState)
-    }
-
-    static func == (left: SubscriptionBox<State>, right: SubscriptionBox<State>) -> Bool {
-        return left.objectIdentifier == right.objectIdentifier
     }
 }
 
@@ -88,13 +80,20 @@ public class Subscription<State> {
         return self._select(selector)
     }
 
+    /// Provides a subscription that selects a substate of the state of the original subscription.
+    /// If the selected substate is `Equatable` repeated state updates will be skipped.
+    /// - parameter selector: A closure that maps a state to a selected substate
+    public func select<Substate: Equatable>(
+        _ selector: @escaping (State) -> Substate
+        ) -> Subscription<Substate>
+    {
+        return self._select(selector).skipRepeats()
+    }
+
     /// Provides a subscription that skips certain state updates of the original subscription.
     /// - parameter isRepeat: A closure that determines whether a given state update is a repeat and
     /// thus should be skipped and not forwarded to subscribers.
-    /// - parameter oldState: The store's old state, before the action is reduced.
-    /// - parameter newState: The store's new state, after the action has been reduced.
-    public func skipRepeats(_ isRepeat: @escaping (_ oldState: State, _ newState: State) -> Bool)
-        -> Subscription<State> {
+    public func skipRepeats(_ isRepeat: @escaping (State, State) -> Bool) -> Subscription<State> {
         return Subscription<State> { sink in
             self.observe { oldState, newState in
                 switch (oldState, newState) {
@@ -142,33 +141,5 @@ public class Subscription<State> {
 extension Subscription where State: Equatable {
     public func skipRepeats() -> Subscription<State>{
         return self.skipRepeats(==)
-    }
-}
-
-/// Subscription skipping convenience methods
-extension Subscription {
-
-    /// Provides a subscription that skips certain state updates of the original subscription.
-    ///
-    /// This is identical to `skipRepeats` and is provided simply for convenience.
-    /// - parameter when: A closure that determines whether a given state update is a repeat and
-    /// thus should be skipped and not forwarded to subscribers.
-    /// - parameter oldState: The store's old state, before the action is reduced.
-    /// - parameter newState: The store's new state, after the action has been reduced.
-    public func skip(when: @escaping (_ oldState: State, _ newState: State) -> Bool) -> Subscription<State> {
-        return self.skipRepeats(when)
-    }
-
-    /// Provides a subscription that only updates for certain state changes.
-    ///
-    /// This is effectively the inverse of `skip(when:)` / `skipRepeats(:)`
-    /// - parameter when: A closure that determines whether a given state update should notify
-    /// - parameter oldState: The store's old state, before the action is reduced.
-    /// - parameter newState: The store's new state, after the action has been reduced.
-    /// the subscriber.
-    public func only(when: @escaping (_ oldState: State, _ newState: State) -> Bool) -> Subscription<State> {
-        return self.skipRepeats { oldState, newState in
-            return !when(oldState, newState)
-        }
     }
 }
