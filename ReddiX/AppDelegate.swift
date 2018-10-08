@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let rootViewController = window?.rootViewController as! ChildrenViewController
+        let rootViewController = window?.rootViewController as! ListingViewController
         
         router = Router(store: store, rootRoutable: RootRoutable(rootViewController: rootViewController)) { state in
             state.select { $0.navigation }

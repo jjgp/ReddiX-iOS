@@ -15,6 +15,7 @@ public struct Child: Decodable {
         case id
         case subreddit
         case title
+        case thumbnail
         case url
         
     }
@@ -28,6 +29,7 @@ public struct Child: Decodable {
     public let id: String
     public let subreddit: String
     public let title: String
+    public let thumbnail: String
     public let url: String
     
 }
@@ -40,6 +42,7 @@ extension Child {
         id = try container.decode(String.self, forKey: .id)
         subreddit = try container.decode(String.self, forKey: .subreddit)
         title = try container.decode(String.self, forKey: .title)
+        thumbnail = try container.decode(String.self, forKey: .thumbnail)
         url = try container.decode(String.self, forKey: .url)
     }
     
@@ -51,6 +54,7 @@ extension Child: Equatable {
         return lhs.id == rhs.id &&
             lhs.subreddit == rhs.subreddit &&
             lhs.title == rhs.title &&
+            lhs.thumbnail == rhs.thumbnail &&
             lhs.url == rhs.url
     }
     

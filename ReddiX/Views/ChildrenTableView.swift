@@ -14,9 +14,9 @@ import UNI
 
 class ChildrenTableView: UITableView, StoreSubscriber {
     
-    typealias StoreSubscriberStateType = ChildrenState
+    typealias StoreSubscriberStateType = ListingsState
     
-    var state: ChildrenState?
+    var state: ListingsState?
     
 }
 
@@ -24,8 +24,9 @@ extension ChildrenTableView {
     
     override func willMove(toSuperview newSuperview: UIView?) {
         if newSuperview != nil {
-            rowHeight = UITableView.automaticDimension
             estimatedRowHeight = 140
+            rowHeight = UITableView.automaticDimension
+            tableFooterView = UIView(frame: .zero)
             
             dataSource = self
             delegate = self
@@ -35,9 +36,12 @@ extension ChildrenTableView {
                                       action: #selector(refreshChildren),
                                       for: .valueChanged)
             
-            store.subscribe(self) { $0.select { $0.children }.skipRepeats() }
+            let endIndex = store.state.listings.endIndex
+            store.dispatch(ListingsActions.pushListing())
+            store.subscribe(self) { $0.select { $0.listings[endIndex] }.skipRepeats() }
         } else {
             store.unsubscribe(self)
+            store.dispatch(ListingsActions.popListing())
         }
         
         super.willMove(toSuperview: newSuperview)
@@ -50,7 +54,7 @@ extension ChildrenTableView {
 extension ChildrenTableView {
     
     @objc func refreshChildren() {
-        store.dispatch(fetchChildren(replacement: true))
+        store.dispatch(ListingsActions.fetchChildren(replacement: true))
     }
     
 }
@@ -59,7 +63,7 @@ extension ChildrenTableView {
 
 extension ChildrenTableView {
     
-    func newState(state: ChildrenState) {
+    func newState(state: ListingsState) {
         let shouldEndProgress = self.state?.isFetching == true && !state.isFetching
         let shouldReload = self.state?.children != state.children
         self.state = state
@@ -82,7 +86,6 @@ extension ChildrenTableView {
     }
     
 }
-
 
 // MARK:- UITableViewDataSource
 
@@ -112,11 +115,11 @@ extension ChildrenTableView: UITableViewDelegate {
         guard state?.isFetching == false else {
             return
         }
-        
+
         // NOTE: https://stackoverflow.com/a/31454471
         let offset = scrollView.contentOffset.y + scrollView.frame.size.height
-        if (offset >= scrollView.contentSize.height) {
-            store.dispatch(fetchChildren())
+        if (offset >= scrollView.contentSize.height - 1) {
+            store.dispatch(ListingsActions.fetchChildren())
         }
     }
     
@@ -126,8 +129,10 @@ extension ChildrenTableView: UITableViewDelegate {
             return
         }
         
-        store.dispatch(SetRouteSpecificData(route: [.childViewController], data: url))
-        store.dispatch(SetRouteAction([.childViewController]))
+        var route = store.state.navigation.route
+        route.append(.childViewController)
+        store.dispatch(SetRouteSpecificData(route: route, data: url))
+        store.dispatch(SetRouteAction(route))
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

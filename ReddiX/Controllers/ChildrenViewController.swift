@@ -13,9 +13,11 @@ import SafariServices
 import UIKit
 import UNI
 
-class ChildrenViewController: UIViewController {
+class ChildrenViewController: UIViewController, StoreSubscriber {
     
-    @IBOutlet var searchBar: ChildrenSearchBar!
+    typealias StoreSubscriberStateType = ListingsState?
+    
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var tableView: ChildrenTableView!
     
 }
@@ -24,24 +26,32 @@ class ChildrenViewController: UIViewController {
 
 extension ChildrenViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        store.subscribe(self) { $0.select { $0.listings.last }.skipRepeats() }
         
-        let recognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
-        recognizer.cancelsTouchesInView = false
-        view.addGestureRecognizer(recognizer)
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        store.unsubscribe(self)
         
-        store.dispatch(fetchChildren())
+        super.viewWillDisappear(animated)
     }
     
 }
 
-// MARK:- Actions
+// MARK:- StoreSubscriber
 
 extension ChildrenViewController {
     
-    @objc func tapped() {
-        searchBar.resignFirstResponder()
+    func newState(state: ListingsState?) {
+        DispatchQueue.main.async {
+            if state?.isFetching == true {
+                self.activityIndicator.startAnimating()
+            } else {
+                self.activityIndicator.stopAnimating()
+            }
+        }
     }
     
 }

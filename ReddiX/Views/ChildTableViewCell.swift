@@ -11,7 +11,7 @@ import UIKit
 
 class ChildTableViewCell: UITableViewCell {
     
-    static let reuseIdentifier = "ChildTableViewCell"
+    static let reuseIdentifier = "\(ChildTableViewCell.self)"
     @IBOutlet var subredditLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     
