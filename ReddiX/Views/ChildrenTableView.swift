@@ -118,7 +118,7 @@ extension ChildrenTableView: UITableViewDelegate {
 
         // NOTE: https://stackoverflow.com/a/31454471
         let offset = scrollView.contentOffset.y + scrollView.frame.size.height
-        if (offset >= scrollView.contentSize.height) {
+        if (offset >= scrollView.contentSize.height - 1) {
             store.dispatch(ListingsActions.fetchChildren())
         }
     }
