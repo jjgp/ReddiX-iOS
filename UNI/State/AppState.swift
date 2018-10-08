@@ -11,12 +11,12 @@ import ReSwiftRouter
 
 public struct AppState: StateType {
     
-    public var children: ChildrenState
+    public var listings: [ListingsState]
     public var navigation: NavigationState
     
-    public init(children: ChildrenState,
+    public init(listings: [ListingsState],
                 navigation: NavigationState) {
-        self.children = children
+        self.listings = listings
         self.navigation = navigation
     }
     
@@ -25,7 +25,7 @@ public struct AppState: StateType {
 extension AppState: Equatable {
     
     public static func ==(lhs: AppState, rhs: AppState) -> Bool {
-        return lhs.children == rhs.children
+        return lhs.listings == rhs.listings
     }
     
 }

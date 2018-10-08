@@ -30,7 +30,9 @@ extension ChildViewController: SFSafariViewControllerDelegate {
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         controller.dismiss(animated: true)
-        store.dispatch(SetRouteAction([]))
+        var route = store.state.navigation.route
+        _ = route.popLast()
+        store.dispatch(SetRouteAction(route))
     }
     
 }

@@ -14,15 +14,11 @@ import WatchKit
 
 class InterfaceController: WKInterfaceController, StoreSubscriber {
     
-    typealias StoreSubscriberStateType = ChildrenState
+    typealias StoreSubscriberStateType = ListingsState
     
-    var state: ChildrenState?
+    var state: ListingsState?
     @IBOutlet var table: WKInterfaceTable!
-
-    @IBAction func refresh() {
-        store.dispatch(ChildrenActions.clearChildren)
-        store.dispatch(fetchChildren())
-    }
+    
 }
 
 // MARK:- Lifecycle
@@ -32,13 +28,19 @@ extension InterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        store.dispatch(fetchChildren())
+        store.dispatch(ListingsActions.pushListing())
+    }
+    
+    override func didAppear() {
+        super.didAppear()
+        
+        store.dispatch(ListingsActions.fetchChildren(replacement: true))
     }
     
     override func willActivate() {
         super.willActivate()
         
-        store.subscribe(self) { $0.select { $0.children }.skipRepeats() }
+        store.subscribe(self) { $0.select { $0.listings[0] }.skipRepeats() }
     }
     
     override func didDeactivate() {
@@ -53,10 +55,10 @@ extension InterfaceController {
 
 extension InterfaceController {
     
-    func newState(state: ChildrenState) {
+    func newState(state: ListingsState) {
         let shouldReload = self.state?.children == state.children
         self.state = state
-        
+
         if shouldReload {
             reloadTable()
         }
