@@ -70,7 +70,6 @@ extension ChildrenTableView {
         
         if shouldReload {
             DispatchQueue.main.async {
-                self.isHidden = self.state?.children.count == 0
                 self.reloadData()
             }
         }
