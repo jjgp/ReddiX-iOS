@@ -1,2 +1,2 @@
 github "ReSwift/ReSwift"
-github "jjgp/ReSwift-Router" "xcode10-travis"
+github "ReSwift/ReSwift-Router" "master"
